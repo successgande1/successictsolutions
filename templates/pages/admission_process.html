@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+
+{% block title %} SUCCESSGANDE | {{ page_title }} {% endblock %}
+
+{% load static %}
+
+{% block content %}
+<div class="page-wraper">
+	<div id="loading-icon-bx"></div>
+	<!-- Header Top ==== -->
+   {% include 'partials/_header.html' %}
+    <!-- header END ==== -->
+    <!-- Inner Content Box ==== -->
+    <div class="page-content">
+        <!-- Page Heading Box ==== -->
+        <div class="page-banner ovbl-dark" style="background-image:url('{% static 'assets/images/banner/SUCCESSGANDE_Banner.jpg' %}');">
+            <div class="container">
+                <div class="page-banner-entry">
+                    <h1 class="text-white"></h1> 
+				 </div>
+            </div>
+        </div>
+		<div class="breadcrumb-row">
+			<div class="container">
+				<ul class="list-inline">
+					<li><a href="{% url 'pages-home' %}">Home</a></li>
+                    <li><a href="{% url 'training-programs' %}">Training</a></li>
+					<li>{{ page_title }}</li>
+				</ul>
+			</div>
+		</div>
+		<!-- Page Heading Box END ==== -->
+        <div class="content-block">
+            <!-- About Us -->
+			<div class="section-area section-sp1">
+                <div class="container">
+					 <div class="row d-flex flex-row-reverse">
+						
+                        {% include 'partials/_proprietor.html' %}
+					
+						<div class="col-lg-9 col-md-8 col-sm-12">
+				
+							
+						
+							<div class="" id="instructor">
+								
+                                    <h2 style="text-align: center; font-family:sans-serif; color:orange; margin-bottom:7px;">Our Admission Process.</h2>
+                                
+
+                                <p style="text-align: center; color:blue; font-size:1.2rem;">
+                                    Read and follow the procedure for admission into our Computer Traning Programs as stated below;
+                                </p>
+                                   
+								<div class="instructor-bx">
+									
+									<div class="ttr-post-info">
+                                        
+                                        <div class="ttr-post-text">
+                                           
+                                            <p>
+                                                Please note that Admission into all our Traning Programs is and MUST be done online as follows.
+                                            </p>
+
+                                            <ol>
+                                                <li>Obtain Admission PIN at #59 Ahmadu Bello Way Gboko.</li>
+                                                <li>Visit www.training.successsolutions.com.ng and Fill Admission Form.</li>
+                                                <li>Submit and Print Out the Admission Photo Card. </li>
+                                                <li>Photocopy and keep a COPY of your Photo Card for future purposes.</li>
+                                                
+                                            </ol>
+                                            
+    
+                                            <p style="font-family: san-serif; font-size:1.2rem; color:blue;">
+                                                Have any question? Reach us on +2348026421028, +2349164660944 or email us at 
+                                                info@successsolutions.com.ng,  successgande@hotmail.com, gandesuccess@gmail.com.
+                                            </p>
+    
+                                            <p>
+                                                <b style="color:blue;">OFFICE ADDRESS:</b>  <b style="color:red;">#59 Ahmadu Bello Way, Gboko, Benue State. Nigeria.</b> 
+                                            </p>
+
+                                            
+                                            <p style="font-family: san-serif; font-size:1.2rem; text-align:center;">
+                                                <b style="color: red;">NOTE:</b>  Part payment for ANY of Our Computer Training Programs can ONLY 
+                                                be acceptable upon receipt of 70% of the Courese Fee.
+                                            </p>
+
+                                            <a class="btn btn-success-sm" target="_blank" href="{% url 'Pre-Application' %}">Admission</a> 
+                                        </div>
+                                    </div>
+
+									
+								</div>
+
+								
+								
+							</div>
+							
+							
+						</div>
+						
+					</div>
+				</div>
+            </div>
+        </div>
+
+
+
+{% endblock %}

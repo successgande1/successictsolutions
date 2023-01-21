@@ -1,0 +1,69 @@
+{% extends 'dashboard_base.html' %}
+
+{% block title %} Dashboard Home {% endblock %}
+
+{% load static %}
+
+
+
+{% block content %}
+
+
+
+
+<!-- Left sidebar menu start -->
+{% include 'partials/_LeftSideBar.html' %}
+<!-- Left sidebar menu end -->
+
+<main class="ttr-wrapper">
+    <div class="container-fluid">
+        <div class="db-breadcrumb">
+            <h4 class="breadcrumb-title" style="color: rgb(4, 149, 16);">Hello! {{ user.username }} </h4>
+            <ul class="db-breadcrumb-list">
+                <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
+                <li style="color: blue;">Dashboard</li> 
+            </ul>
+        </div>	
+
+        <!--Check if User is login and is also a staff and a superuser-->
+        {% if user.is_authenticated and user.is_staff and user.is_superuser %}
+        
+        <!-- Card -->
+        {% include 'partials/_cards.html' %}
+        <!-- Card END -->
+
+        {% include 'partials/_user_list.html' %}
+        
+
+        {% else %}
+
+        {% include 'partials/_staff_cards.html' %}
+
+        <div class="col-md-8">
+            <table class="table bg-white">
+                <thead class="bg-info text-white">
+                  <tr>
+                    <th scope="col" style="color: white;">#</th>
+                    <th scope="col" style="color: white;">Income Description</th>
+                    <th scope="col" style="color: white;">Amount</th>
+                  
+                    <th scope="col" style="color: white;" nowrap>Income. Date</th>
+                    <th scope="col" style="color: white;">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                         
+                </tbody>
+              </table>
+
+              <!--Pagination Start Here-->
+             
+        </div>
+        
+        {% endif %}
+
+        
+    </div>
+</main>
+
+{% endblock %}

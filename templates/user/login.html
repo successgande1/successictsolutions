@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Applicant Login {% endblock %}
+
+{% load bootstrap4 %}
+
+{% block content %}
+
+<div class="page-wraper">
+	<div id="loading-icon-bx"></div>
+	<div class="account-form">
+		<div class="account-head" style="background-image:url( assets/images/background/bg2.jpg );">
+			<a href="#"><img src="{% static 'assets/images/logo-white-2.png' %}" alt=""></a>
+		</div>
+		<div class="account-form-inner">
+			<div class="account-container">
+				<div class="heading-bx left">
+					<h2 class="title-head">Login to your <span>Account</span></h2>
+					<p>Bought PIN? <a href="{% url 'register' %}">Activate Here</a></p>
+				</div>
+				<!-- Alerts-->	
+				{% include 'partials/_alerts.html' %}
+				<!-- Alerts End-->
+				
+				<form class="contact-bx" method="POST">
+					{% csrf_token %}
+
+                    <div class="form-row">
+						<div class="form-group col-md-10 mb-0">
+							{% bootstrap_form form %}
+						</div>
+						
+					</div>
+
+					<div class="col-lg-12 m-b30">
+						
+					{% buttons %}
+						<button name="submit" type="submit" value="Submit" class="btn button-md">Login</button>
+					{% endbuttons %}
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

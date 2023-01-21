@@ -44,6 +44,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'pages.apps.PagesConfig',
     'crispy_forms',
+    'anymail',
+    'dashboard.apps.DashboardConfig',
+    'user.apps.UserConfig',
+    'multiselectfield',
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -109,6 +114,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
@@ -137,3 +144,34 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+MEDIA_URL = '/media/' 
+
+#MESSAGING
+from django.contrib.messages import constants as messsages
+MESSAGE_TAGS = {
+
+    messsages.ERROR: 'danger'
+}
+
+#Redirect User after Successful login
+LOGIN_REDIRECT_URL = 'dashboard-index'
+
+
+CRISPY_TEMPLATE_PACK = 'uni_form'
+
+ANYMAIL = {
+  
+    "SENDINBLUE_API_KEY": "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",
+}
+
+EMAIL_BACKEND = "anymail.backends.sendinblue.EmailBackend"
+EMAIL_HOST = 'smtp-relay.sendinblue.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT =  587
+EMAIL_HOST_USER = config('SECRET_EMAIL')
+EMAIL_HOST_PASSWORD = config('SECRET_EMAIL_PASSWORD')
+EMAIL_USE_SSL = False
+DEFAULT_FROM_EMAIL = 'SUCCESS SOFTWARE DEVELOPERS. <noreply@successsolutions.org>'

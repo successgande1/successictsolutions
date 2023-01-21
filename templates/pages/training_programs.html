@@ -1,0 +1,234 @@
+{% extends 'base.html' %}
+
+{% block title %} SUCCESSGANDE | {{ page_title }} {% endblock %}
+
+{% load static %}
+
+{% block content %}
+<div class="page-wraper">
+	<div id="loading-icon-bx"></div>
+	<!-- Header Top ==== -->
+   {% include 'partials/_header.html' %}
+    <!-- header END ==== -->
+    <!-- Inner Content Box ==== -->
+    <div class="page-content">
+        <!-- Page Heading Box ==== -->
+        <div class="page-banner ovbl-dark" style="background-image:url('{% static 'assets/images/banner/SUCCESSGANDE_Banner.jpg' %}');">
+            <div class="container">
+                <div class="page-banner-entry">
+                    <h1 class="text-white"></h1> 
+				 </div>
+            </div>
+        </div>
+		<div class="breadcrumb-row">
+			<div class="container">
+				<ul class="list-inline">
+					<li><a href="{% url 'pages-home' %}">Home</a></li>
+					<li>{{ page_title }}</li>
+				</ul>
+			</div>
+		</div>
+		<!-- Page Heading Box END ==== -->
+        <div class="content-block">
+            <!-- About Us -->
+			<div class="section-area section-sp1">
+                <div class="container">
+					 <div class="row d-flex flex-row-reverse">
+						
+						{% include 'partials/_proprietor.html' %}
+					
+						<div class="col-lg-9 col-md-8 col-sm-12">
+							<div class="courses-post">
+								<div class="ttr-post-title">
+									<h2 style="text-align:center;">Our Training Programs</h2>
+								</div>
+
+								<section class="myContainer">
+
+									<div class="myCard">
+						
+										<div class="myCard-image image-1">
+						
+										</div>
+										<h2>Computer Literacy</h2>
+										
+											<ul>
+												<li>Computer System: The Big Picture.</li>
+												<li>Computer Keyboard Skills.</li>
+												<li>Computer Windows Operations.</li>
+												<li>Microsoft Word 2007.</li>
+												<li>Internet Applications.</li>
+												<li>Computer Business Mgt.</li>
+												<li>Examination.</li>
+												<li style="color: rgb(255, 123, 0)">Duration: 3 Months</li>
+												<li style="color: red;">Fee: N10,000.00</li>
+												<li style="color: rgb(255, 123, 0);">Form: N500.00</li>
+											</ul>
+										
+						
+										<a href="{% url 'admission-process' %}">Apply</a>
+						
+									</div><!--End of Card-->
+						
+									<div class="myCard">
+						
+										<div class="myCard-image image-2">
+						
+										</div>
+										<h2>Applications Training</h2>
+										<ul>
+											<li>Corel Draw.</li>
+											<li>Ms Excel.</li>
+											<li>Ms Access Database.</li>
+											<li>Windows Configurations.</li>
+											<li>Online Businesses.</li>
+											<li>Computer Business Mgt.</li>
+											<li>Examination.</li>
+											<li style="color: rgb(255, 123, 0)">Duration: 6 Months</li>
+											<li style="color: red;">Fee: N19,000.00</li>
+											<li style="color: rgb(255, 123, 0);">Form: N500.00</li>
+										</ul>
+										
+										<a href="{% url 'admission-process' %}">Apply</a>
+						
+									</div><!--End of Card-->
+						
+									<div class="myCard">
+						
+										<div class="myCard-image image-3">
+						
+										</div>
+										<h2>Frontend Programming</h2>
+										<ul>
+											<li>Frontend Programming.</li>
+											<li>Developer Tools.</li>
+											<li>HTML5.</li>
+											<li>CSS3.</li>
+											<li>JavaScript.</li>
+											<li>Frontend Frameworks.</li>
+											<li>Web Hosting.</li>
+											<li>Project Work.</li>
+											<li style="color: rgb(255, 123, 0)">Duration: 3 Months</li>
+											<li style="color: red;">Fee: N25,000.00</li>
+											<li style="color: rgb(255, 123, 0);">Form: N5000.00</li>
+										</ul>
+						
+										<a href="{% url 'admission-process' %}">Apply</a>
+						
+									</div><!--End of Card-->
+						
+									<div class="myCard">
+						
+										<div class="myCard-image image-4">
+						
+										</div>
+										<h2>Backend Programming</h2>
+										<ul>
+											<li>Backend Languages.</li>
+											<li>IDEs & Setup.</li>
+											<li>Evironment Setup.</li>
+											<li>Python Programming.</li>
+											<li>Python Frameworks.</li>
+											<li>Django.</li>
+											<li>App. Hosting.</li>
+											<li>Project Work.</li>
+											<li style="color: rgb(255, 123, 0)">Duration: 3 Months</li>
+											<li style="color: red;">Fee: N25,000.00</li>
+											<li style="color: rgb(255, 123, 0);">Form: N5000.00</li>
+										</ul>
+						
+										<a href="{% url 'admission-process' %}">Apply</a>
+						
+									</div><!--End of Card-->
+						
+						
+						
+								</section><!--End of Container-->
+		
+						
+							<div class="" id="instructor">
+								<h4>Our Team</h4>
+								<div class="instructor-bx">
+									<div class="instructor-author">
+										<img src="{% static 'assets/images/testimonials/pic1.jpg' %}" alt="SUCCESSGANDE Photo">
+									</div>
+									<div class="instructor-info">
+										<h6>Igbeh Emma Gande </h6>
+										<span>Proprietor</span>
+										<ul class="list-inline m-tb10">
+											<li><a href="https://web.facebook.com/SUCCESSGANDE" target="_blank" class="btn sharp-sm facebook"><i class="fa fa-facebook"></i></a></li>
+											<li><a href="https://twitter.com/successgande" target="_blank" class="btn sharp-sm twitter"><i class="fa fa-twitter"></i></a></li>
+											<li><a href="https://www.linkedin.com/in/gandepuun-emmanuel-a61693198/" target="_blank" class="btn sharp-sm linkedin"><i class="fa fa-linkedin"></i></a></li>
+											<li><a href="#" class="btn sharp-sm google-plus"><i class="fa fa-google-plus"></i></a></li>
+										</ul>
+										<p class="m-b0">Igbeh Emmanuel Gande is a Certified Google Mobile Web Developer through the Google Africa
+											Developer Scholarship Program. Currently, a Python Programmer and Django Developer with ability of 
+											meeting Deadlines and learning new Technologies on the go. He is the Lead Software Developer at SUCCESSGANDE
+											ICT Solutions.
+										</p>
+									</div>
+
+									
+								</div>
+
+								<div class="instructor-bx">
+									<div class="instructor-author">
+										<img src="{% static 'assets/images/testimonials/pic1.jpg' %}" alt="SUCCESSGANDE Photo">
+									</div>
+									<div class="instructor-info">
+										<h6>Tatso Salias</h6>
+										<span>Training Coordinator</span>
+										<ul class="list-inline m-tb10">
+											<li><a href="https://web.facebook.com/SUCCESSGANDE" target="_blank" class="btn sharp-sm facebook"><i class="fa fa-facebook"></i></a></li>
+											<li><a href="https://twitter.com/successgande" target="_blank" class="btn sharp-sm twitter"><i class="fa fa-twitter"></i></a></li>
+											<li><a href="https://www.linkedin.com/in/gandepuun-emmanuel-a61693198/" target="_blank" class="btn sharp-sm linkedin"><i class="fa fa-linkedin"></i></a></li>
+											<li><a href="#" class="btn sharp-sm google-plus"><i class="fa fa-google-plus"></i></a></li>
+										</ul>
+										<p class="m-b0">Tatso Salias is a Frontend Developer, one among  
+											SUCCESSGANDE Software Developer Team. He is currently the Training 
+											Coordinator of SUCCESSGANDE ICT Solutions Training Courses, and with over 5
+											years of computer operations, and Training.
+										</p>
+									</div>
+
+									
+
+									
+								</div>
+
+								<div class="instructor-bx">
+									<div class="instructor-author">
+										<img src="{% static 'assets/images/testimonials/pic1.jpg' %}" alt="SUCCESSGANDE Photo">
+									</div>
+									<div class="instructor-info">
+										<h6>Apollos Nabem</h6>
+										<span>Training Instructor</span>
+										<ul class="list-inline m-tb10">
+											<li><a href="https://web.facebook.com/SUCCESSGANDE" target="_blank" class="btn sharp-sm facebook"><i class="fa fa-facebook"></i></a></li>
+											<li><a href="https://twitter.com/successgande" target="_blank" class="btn sharp-sm twitter"><i class="fa fa-twitter"></i></a></li>
+											<li><a href="https://www.linkedin.com/in/gandepuun-emmanuel-a61693198/" target="_blank" class="btn sharp-sm linkedin"><i class="fa fa-linkedin"></i></a></li>
+											<li><a href="#" class="btn sharp-sm google-plus"><i class="fa fa-google-plus"></i></a></li>
+										</ul>
+										<p class="m-b0">Apollos Nabem is a Frontend Developer, and one among  
+											SUCCESSGANDE Software Developers' Team. He is currently a Training 
+											instructor at SUCCESSGANDE ICT Solutions Training Courses, and with over 3
+											years of computer operations, and Training.
+										</p>
+									</div>
+
+								</div>
+								
+								
+							</div>
+							
+							
+						</div>
+						
+					</div>
+				</div>
+            </div>
+        </div>
+
+
+
+{% endblock %}

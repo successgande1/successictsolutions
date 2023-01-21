@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block title %} SUCCESSGANDE | {{ page_title }} {% endblock %}
+
+{% load static %}
+
+{% block content %}
+<div class="page-wraper">
+	<div id="loading-icon-bx"></div>
+	<!-- Header Top ==== -->
+   {% include 'partials/_header.html' %}
+    <!-- header END ==== -->
+    <!-- Inner Content Box ==== -->
+    <div class="page-content">
+        <!-- Page Heading Box ==== -->
+        <div class="page-banner ovbl-dark" style="background-image:url('{% static 'assets/images/banner/SUCCESSGANDE_Banner.jpg' %}');">
+            <div class="container">
+                <div class="page-banner-entry">
+                    <h1 class="text-white"></h1> 
+				 </div>
+            </div>
+        </div>
+		<div class="breadcrumb-row">
+			<div class="container">
+				<ul class="list-inline">
+					<li><a href="{% url 'pages-home' %}">Home</a></li>
+                    <li><a href="{% url 'training-programs' %}">Training</a></li>
+                    <li><a href="{% url 'admission-process' %}">Admission Process</a></li>
+					<li>{{ page_title }}</li>
+				</ul>
+			</div>
+		</div>
+		<!-- Page Heading Box END ==== -->
+        <div class="content-block">
+            <!-- About Us -->
+			<div class="section-area section-sp1">
+                <div class="container">
+					 <div class="row d-flex flex-row-reverse">
+						
+                        {% include 'partials/_proprietor.html' %}
+					
+						<div class="col-lg-9 col-md-8 col-sm-12">
+				
+							
+						
+							<div class="" id="instructor">
+								
+                                    <h2 style="text-align: center; font-family:sans-serif; color:orange; margin-bottom:7px;">Pre-Application For Admission.</h2>
+                                
+
+                                <p style="text-align: center; color:blue; font-size:1.2rem;">
+                                    Please Use the FORM below to Select your CHOICE of Program to Continue.
+                                </p>
+                                   
+								<div class="instructor-bx">
+									
+									<div class="ttr-post-info">
+                                        
+                                        <div class="ttr-post-text">
+                                           
+                                            <p>
+                                                Also NOTE that you will be REQUIRED to ACTIVATE your ADMISSION PIN on the Next Page.
+                                            </p>
+
+         
+                                            
+    
+                                           
+                                            
+                                            <p style="font-family: san-serif; font-size:1.2rem; text-align:center;">
+                                                <b style="color: red;">Important Information:</b>  All Our Students are Required to 
+                                                Strickly follow our Training Time Table.
+                                            </p>
+
+                                            <p>
+                                                <b style="color: blue; font-size:1.3rem;">Purchased PIN?</b>  Click to <a class="btn btn-success-sm" target="_blank" href="{% url 'register' %}">Activate PIN.</a> 
+                                            </p>
+
+                                            <p>
+                                                <b style="color: blue; font-size:1.3rem;">Returning Applicant?</b>  Click to <a class="btn btn-success-sm" target="_blank" href="{% url 'user-login' %}">Login.</a> 
+                                            </p>
+
+                                           
+                                            
+                                        </div>
+                                    </div>
+
+									
+								</div>
+
+								
+								
+							</div>
+							
+							
+						</div>
+						
+					</div>
+				</div>
+            </div>
+        </div>
+
+
+
+{% endblock %}

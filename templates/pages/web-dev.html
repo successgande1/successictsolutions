@@ -1,0 +1,185 @@
+{% extends 'base.html' %}
+
+{% block title %} SUCCESSGANDE | {{ page_title }} {% endblock %}
+
+{% load static %}
+
+{% block content %}
+<div class="page-wraper">
+	<div id="loading-icon-bx"></div>
+	<!-- Header Top ==== -->
+   {% include 'partials/_header.html' %}
+    <!-- header END ==== -->
+    <!-- Inner Content Box ==== -->
+    <div class="page-content">
+        <!-- Page Heading Box ==== -->
+        <div class="page-banner ovbl-dark" style="background-image:url('{% static 'assets/images/banner/SUCCESSGANDE_Banner.jpg' %}');">
+            <div class="container">
+                <div class="page-banner-entry">
+                    <h1 class="text-white"></h1> 
+				 </div>
+            </div>
+        </div>
+		<div class="breadcrumb-row">
+			<div class="container">
+				<ul class="list-inline">
+					<li><a href="#">Home</a></li>
+					<li>{{ page_title }}</li>
+				</ul>
+			</div>
+		</div>
+		<!-- Page Heading Box END ==== -->
+        <div class="content-block">
+            <!-- About Us -->
+			<div class="section-area section-sp1">
+                <div class="container">
+					 <div class="row d-flex flex-row-reverse">
+						<div class="col-lg-3 col-md-4 col-sm-12 m-b30">
+							<div class="course-detail-bx">
+									
+								<div class="course-buy-now text-center">
+									<a href="{% url 'contact-us' %}" class="btn radius-xl text-uppercase">Contact Us</a>
+								</div>
+								<div class="teacher-bx">
+									<div class="teacher-info">
+										<div class="teacher-thumb">
+											<img src="{% static 'assets/images/testimonials/pic1.jpg' %}" alt=""/>
+										</div>
+										<div class="teacher-name">
+											<h5>Igbeh Emmanuel</h5>
+											<span>Lead Software Developer</span>
+										</div>
+									</div>
+								</div>
+								
+								<div class="course-info-list scroll-page">
+									<ul class="navbar">
+										<li><a class="nav-link" href="#overview"><i class="ti-zip"></i>Custom Software</a></li>
+										<li><a class="nav-link" href="#curriculum"><i class="ti-bookmark-alt"></i>Software Features</a></li>
+										<li><a class="nav-link" href="#instructor"><i class="ti-user"></i>Developers</a></li>
+										<li><a class="nav-link" href="#reviews"><i class="ti-comments"></i>Testimonies</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					
+						<div class="col-lg-9 col-md-8 col-sm-12">
+							<div class="courses-post">
+								<div class="ttr-post-media media-effect">
+									<a href="#"><img src="{% static 'assets/images/slider/success-digital-solution-slide2.jpg' %}" alt=""></a>
+								</div>
+								<div class="ttr-post-info">
+									<div class="ttr-post-title">
+										<h2 class="post-title">Website Design and Development</h2>
+									</div>
+									<div class="ttr-post-text">
+										<p>COVID-19 pademic has force humanity to see the role of
+                                            websites in effective business service delivery. Every business organisation 
+                                         with a website that has stand a test of time would 
+                                         testify that their businesses got better with online presence.
+                                         SUCCESSGANDE ICT Solutions is ready to bring these solution to
+                                         you and business affordably. We develop Responsive Websites; Websites
+                                         that can scale across different device screen sizes with
+                                         readibility in view. We use website development Technologies that 
+										 allows us the freedom of flexibility during the design process. Search Engine
+										 Optimization is one thing we alway keep in mind while using these technologies.
+										 <a class="btn btn-success-sm" target="_blank" href="{% url 'contact-us' %}">Get In Touch</a> 
+                                        </p>
+									</div>
+								</div>
+							</div>
+							<div class="courese-overview" id="overview">
+								<h4>Our Web Technologies</h4>
+								<div class="row">
+									<div class="col-md-12 col-lg-4">
+										<ul class="course-features">
+											<li><i class="ti-book"></i> <span class="label">HTML5</span> </li>
+											<li><i class="ti-help-alt"></i> <span class="label">CSS3</span> </li>
+											<li><i class="ti-time"></i> <span class="label">JavaScript</span> </li>
+											<li><i class="ti-stats-up"></i> <span class="label">Bootstrap</span> </li>
+											<li><i class="ti-smallcap"></i> <span class="label">Python</span> </li>
+                                            <li><i class="ti-smallcap"></i> <span class="label">Django</span> </li>
+							
+										</ul>
+									</div>
+									<div class="col-md-12 col-lg-8">
+										<h5 class="m-b5">Our Recent Work</h5>
+										<iframe height="100%" width="100%" src="http://www.extraordinaryfamilychurch.org/" title="Extraordinary Church Website">
+											
+										</iframe>
+                                      
+									</div>
+								</div>
+							</div>
+							<div class="m-b30" id="curriculum">
+								<h4 style="color:rgb(155, 5, 45)">Features</h4>
+								<ul class="curriculum-list">
+										<li>
+											
+											<ul>
+												<li>
+													<div class="curriculum-list-box">
+														<span style="color:brown">Progressive Web Enhencement: </span> <a href="">Read More</a>
+													</div>
+													
+												</li>
+												<li>
+													<div class="curriculum-list-box">
+														<span style="color:brown">Progressive Web App Foundation:</span>  <a href="">Read More</a>
+													</div>
+													
+												</li>
+												<li>
+													<div class="curriculum-list-box">
+														<span style="color:brown">Search Engine Optimization Compliance:</span> <a href="">Read More</a>
+													</div>
+													
+												</li>
+												<li>
+													<div class="curriculum-list-box">
+														<span style="color:brown">Accessibility with Colors:</span> <a href="">Read More</a>
+													</div>
+													
+												</li>
+											</ul>
+										</li>
+										
+									
+									</ul>
+							</div>
+							<div class="" id="instructor">
+								<h4>Developers</h4>
+								<div class="instructor-bx">
+									<div class="instructor-author">
+										<img src="{% static 'assets/images/testimonials/pic1.jpg' %}" alt="SUCCESSGANDE Photo">
+									</div>
+									<div class="instructor-info">
+										<h6>Igbeh Emma Gande </h6>
+										<span>Lead Software Developer</span>
+										<ul class="list-inline m-tb10">
+											<li><a href="https://web.facebook.com/SUCCESSGANDE" target="_blank" class="btn sharp-sm facebook"><i class="fa fa-facebook"></i></a></li>
+											<li><a href="https://twitter.com/successgande" target="_blank" class="btn sharp-sm twitter"><i class="fa fa-twitter"></i></a></li>
+											<li><a href="https://www.linkedin.com/in/gandepuun-emmanuel-a61693198/" target="_blank" class="btn sharp-sm linkedin"><i class="fa fa-linkedin"></i></a></li>
+											<li><a href="#" class="btn sharp-sm google-plus"><i class="fa fa-google-plus"></i></a></li>
+										</ul>
+										<p class="m-b0">Igbeh Emmanuel Gande is a Certified Google Mobile Web Developer through the Google Africa
+											Developer Scholarship Program. Currently, a Python Programmer and Django Developer with ability of 
+											meeting Deadlines and learning new Technologies on the go. He is the Lead Software Developer at SUCCESSGANDE
+											ICT Solutions.
+										</p>
+									</div>
+								</div>
+								
+							</div>
+							
+							
+						</div>
+						
+					</div>
+				</div>
+            </div>
+        </div>
+
+
+
+{% endblock %}

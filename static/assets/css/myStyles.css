@@ -1,0 +1,89 @@
+.myContainer{
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+
+.myCard{
+    width: 270px;
+    height: 520px;
+    background-color: #eeecec;
+    margin:10px 22px;
+    border-radius: 10px;
+}
+
+.myCard-image{
+    height: 150px;
+    margin-bottom: 1px;
+    background-size: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.image-1{
+    background-image:url("/static/assets/images/courses/literacy-training.jpg")
+}
+
+.image-2{
+    background-image:url('/static/assets/images/courses/applications-training.jpg')
+}
+
+.image-3{
+    background-image:url('/static/assets/images/courses/success-styling-websites-css.jpg')
+}
+
+.image-4{
+    background-image:url('/static/assets/images/our-services/success-custom-software-development.jpg')
+}
+
+.myCard h2{
+    padding: 3px;
+    text-align: center;
+    color: orange;
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 1px;
+}
+
+.myCard p{
+    padding: 1px;
+    font-size: 1rem;
+    font-family: sans-serif;
+}
+
+.myCard a{
+    background-color: black;
+    color: white;
+    padding: 5px 14px;
+    display: block;
+    text-align: center;
+    margin: 10px 50px;
+    text-decoration: none;
+    margin-bottom: 2px;
+}
+
+.myCard:hover{
+    background-color: rgb(50,50,50);
+    color: white;
+    cursor: pointer;
+    transform: scale(1.03);
+    transition: all 1s ease;
+}
+
+.myCard ul{
+    display: block;
+    text-align: center;
+    margin: 1px 1px;
+    list-style-type: none;
+    font-family: sans-serif;
+    font-size: 1rem;
+}
+
+/* .myCard li{
+    list-style-type: none;
+    font-family: sans-serif;
+    font-size: 1rem;
+    color: black;
+} */
+
+

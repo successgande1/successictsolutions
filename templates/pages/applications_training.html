@@ -1,0 +1,193 @@
+{% extends 'base.html' %}
+
+{% block title %} SUCCESSGANDE | {{ page_title }} {% endblock %}
+
+{% load static %}
+
+{% block content %}
+<div class="page-wraper">
+	<div id="loading-icon-bx"></div>
+	<!-- Header Top ==== -->
+   {% include 'partials/_header.html' %}
+    <!-- header END ==== -->
+    <!-- Inner Content Box ==== -->
+    <div class="page-content">
+        <!-- Page Heading Box ==== -->
+        <div class="page-banner ovbl-dark" style="background-image:url('{% static 'assets/images/banner/SUCCESSGANDE_Banner.jpg' %}');">
+            <div class="container">
+                <div class="page-banner-entry">
+                    <h1 class="text-white"></h1> 
+				 </div>
+            </div>
+        </div>
+		<div class="breadcrumb-row">
+			<div class="container">
+				<ul class="list-inline">
+					<li><a href="{% url 'pages-home' %}">Home</a></li>
+                    <li><a href="{% url 'programming' %}">Training</a></li>
+					<li>{{ page_title }}</li>
+				</ul>
+			</div>
+		</div>
+		<!-- Page Heading Box END ==== -->
+        <div class="content-block">
+            <!-- About Us -->
+			<div class="section-area section-sp1">
+                <div class="container">
+					 <div class="row d-flex flex-row-reverse">
+						<div class="col-lg-3 col-md-4 col-sm-12 m-b30">
+							<div class="course-detail-bx">
+									
+								<div class="course-buy-now text-center">
+									<a href="{% url 'contact-us' %}" class="btn radius-xl text-uppercase">Contact Us</a>
+								</div>
+								<div class="teacher-bx">
+									<div class="teacher-info">
+										<div class="teacher-thumb">
+											<img src="{% static 'assets/images/testimonials/pic1.jpg' %}" alt=""/>
+										</div>
+										<div class="teacher-name">
+											<h5>Igbeh Emmanuel</h5>
+											<span>Software Instructor</span>
+										</div>
+									</div>
+								</div>
+								
+								<div class="course-info-list scroll-page">
+									<ul class="navbar">
+										<li><a class="nav-link" href="#overview"><i class="ti-zip"></i>Compt. Literacy Training</a></li>
+										<li><a class="nav-link" href="#curriculum"><i class="ti-bookmark-alt"></i>Web Programmer Training</a></li>
+										<li><a class="nav-link" href="#instructor"><i class="ti-user"></i>Instructors</a></li>
+										<li><a class="nav-link" href="#reviews"><i class="ti-user"></i>Graduates</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					
+						<div class="col-lg-9 col-md-8 col-sm-12">
+							<div class="courses-post">
+								<div class="ttr-post-media media-effect">
+									<a href="#"><img src="{% static 'assets/images/our-services/success-digital-website-development.jpg' %}" alt=""></a>
+								</div>
+								
+
+							
+							</div>
+							
+						
+							<div class="" id="instructor">
+								<div class="ttr-post-title">
+                                    <h2 class="post-title">Computer Applications Training</h2>
+                                </div>
+
+                                <p>
+                                    Our Computer Operations Training are divided into two categories
+                                </p>
+                                   
+								<div class="instructor-bx">
+									
+									<div class="ttr-post-info">
+                                        
+                                        <div class="ttr-post-text">
+                                            
+    
+                                            <h2>1. Basic Computer Literacy Training</h2>
+    
+                                            <p style="color: blue;">
+                                                Our Basic Computer Literacy Training covers the following areas;
+                                            </p>
+                                            <ul>
+                                                <li>Computer System: <b>The Big Picture.</b></li>
+                                                <li>Computer Windows Operations: <b>Getting Started.</b> </li>
+                                                <li>Computer Keyboard Skills: <b>Getting Started</b> </li>
+                                                <li>Microsoft Word Processing: <b>Getting Started.</b> </li>
+                                                <li>Internet Application: <b>Getting Started.</b> </li>
+                                                <li>Online Income Earnings: <b>Getting Started.</b> </li>
+                                                <li>Course Assessment</li>
+                                            </ul>
+    
+                                            <p>
+                                                <b>COURSE DURATION:</b>  <b style="color:red ;">3 Months</b> 
+                                            </p>
+    
+                                            <p>
+                                                <b>COURSE PIN FEE:</b>  <b style="color:red;">N500.00</b> 
+                                            </p>
+
+                                            <p>
+                                                <b>COURSE TRAINING FEE:</b>  <b style="color:red;">N10,000.00</b> 
+                                            </p>
+
+                                            <p>
+                                                <b style="color: red;">NOTE:</b>  Part payment is ONLY accepted upon receipt of HALF of the 
+                                                Courese Fee.
+                                            </p>
+    
+                                            <a class="btn btn-success-sm" target="_blank" href="{% url 'operations-training' %}">Apply Now</a> 
+                                        </div>
+                                    </div>
+
+									
+								</div>
+
+								<div class="instructor-bx">
+									
+									<div class="ttr-post-info">
+                                        <div class="ttr-post-title">
+                                            <h2>2. Computer Applications Training</h2>
+                                        </div>
+                                        <div class="ttr-post-text">
+                                            <p style="color:blue;">
+                                             Our Computer Applications Training covers the following areas;
+                                            </p>
+    
+                                   
+                                            <ul>
+                                                <li>Computer System: <b>Intermediate.</b> </li>
+                                                <li>Computer Windows Operations: <b>Intermediate - Advance.</b> </li>
+                                                <li>Computer Keyboard Skills: <b>Intermediate - Advance</b> </li>
+                                                <li>Microsoft Excel: <b>Intermediate - Advance</b> </li>
+                                                <li>Corel Draw: <b>Getting Started - Intermediate</b>  </li>
+                                                <li>Computer Job Interview: <b>Getting Started</b> </li>
+                                                <li>Computer Business Mgt Skills: <b>Getting Started</b> </li>
+                                                <li>Course Project</li>
+                                            </ul>
+    
+                                            <p>
+                                                <b>COURSE DURATION:</b>  <b style="color:red ;">6 Months</b> 
+                                            </p>
+    
+                                            <p>
+                                                <b>COURSE PIN FEE:</b>  <b style="color:red;">N500.00</b> 
+                                            </p>
+
+                                            <p>
+                                                <b>COURSE TRAINING FEE:</b>  <b style="color:red;">N18,000.00</b> 
+                                            </p>
+
+                                            <p>
+                                                <b style="color: red;">NOTE:</b>  Part payment is ONLY accepted upon receipt of HALF of the 
+                                                Courese Fee.
+                                            </p>
+    
+                                            <a class="btn btn-success-sm" target="_blank" href="{% url 'operations-training' %}">Apply Now</a> 
+                                        </div>
+                                    </div>
+
+									
+								</div>
+								
+								
+							</div>
+							
+							
+						</div>
+						
+					</div>
+				</div>
+            </div>
+        </div>
+
+
+
+{% endblock %}

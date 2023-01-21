@@ -1,0 +1,198 @@
+{% extends 'base.html' %}
+
+{% block title %} SUCCESSGANDE | {{ page_title }} {% endblock %}
+
+{% load static %}
+
+{% block content %}
+<div class="page-wraper">
+	<div id="loading-icon-bx"></div>
+	<!-- Header Top ==== -->
+   {% include 'partials/_header.html' %}
+    <!-- header END ==== -->
+    <!-- Inner Content Box ==== -->
+    <div class="page-content">
+        <!-- Page Heading Box ==== -->
+        <div class="page-banner ovbl-dark" style="background-image:url('{% static 'assets/images/banner/SUCCESSGANDE_Banner.jpg' %}');">
+            <div class="container">
+                <div class="page-banner-entry">
+                    <h1 class="text-white"></h1> 
+				 </div>
+            </div>
+        </div>
+		<div class="breadcrumb-row">
+			<div class="container">
+				<ul class="list-inline">
+					<li><a href="{% url 'pages-home' %}">Home</a></li>
+                    <li><a href="{% url 'programming' %}">Training</a></li>
+                   
+					<li>{{ page_title }}</li>
+				</ul>
+			</div>
+		</div>
+		<!-- Page Heading Box END ==== -->
+        <div class="content-block">
+            <!-- About Us -->
+			<div class="section-area section-sp1">
+                <div class="container">
+					 <div class="row d-flex flex-row-reverse">
+						<div class="col-lg-3 col-md-4 col-sm-12 m-b30">
+							<div class="course-detail-bx">
+									
+								<div class="course-buy-now text-center">
+									<a href="{% url 'contact-us' %}" class="btn radius-xl text-uppercase">Ask Question</a>
+								</div>
+								<div class="teacher-bx">
+									<div class="teacher-info">
+										<div class="teacher-thumb">
+											<img src="{% static 'assets/images/testimonials/pic1.jpg' %}" alt="successgande picture"/>
+										</div>
+										<div class="teacher-name">
+											<h5>Igbeh Emmanuel</h5>
+											<span>Proprietor</span>
+										</div>
+									</div>
+								</div>
+								
+								<div class="course-info-list scroll-page">
+									<ul class="navbar">
+										
+										<li><a class="nav-link" href="#instructor"><i class="ti-user"></i>Programming Training</a></li>
+										
+									</ul>
+								</div>
+							</div>
+						</div>
+					
+						<div class="col-lg-9 col-md-8 col-sm-12">
+							<!-- <div class="courses-post">
+								<div class="ttr-post-media media-effect">
+									<a href="#"><img src="{% static 'assets/images/our-services/success-digital-website-development.jpg' %}" alt=""></a>
+								</div>
+								
+
+							
+							</div> -->
+							
+						
+							<div class="" id="instructor">
+								<div class="ttr-post-title">
+                                    <h2 class="post-title">Web Programming Training</h2>
+                                </div>
+
+                                <p>
+                                    Our Web Programming Training is divided into two categories
+                                </p>
+                                   
+								<div class="instructor-bx">
+									
+									<div class="ttr-post-info">
+                                        
+                                        <div class="ttr-post-text">
+                                            
+    
+                                            <h2>1. Frontend Web Programming </h2>
+    
+                                            <p style="color: blue;">
+                                                The Training covers the following areas;
+                                            </p>
+                                            <ul>
+                                                <li>The Internet: <b>The Big Picture.</b> </li>
+                                                <li>Programming: <b>The Big Picture.</b> </li>
+                                                <li>Web Programming: <b>The Big Picture.</b> </li>
+                                                <li>HTML5: <b>Beginner - Intermediate.</b> </li>
+                                                <li>CSS3: <b>Beginner - Intermediate.</b> </li>
+                                                <li>JavaScript: <b>Beginner - Intermediate.</b> </li>
+                                                <li>Frontend Framework: <b>The Big Picture.</b> </li>
+                                                <li>Bootstrap 4: <b>Beginner - Intermediate.</b> </li>
+                                                <li>Developer Tools: <b>Getting Started.</b> </li>
+                                                <li>Website Hosting: <b>Getting Started.</b> </li>
+                                                <li>Git and GitHub: <b>Getting Started.</b> </li>
+                                                <li>Course Project: <b>4 Weeks.</b> </li>
+                                            </ul>
+    
+                                            <p>
+                                                <b>COURSE DURATION:</b>  <b style="color:red ;">3 Months</b> 
+                                            </p>
+    
+                                            <p>
+                                                <b>COURSE PIN:</b>  <b style="color:red;">N5,000.00</b> 
+                                            </p>
+
+                                            <p>
+                                                <b>COURSE Fee:</b>  <b style="color:red;">N25,000.00</b> 
+                                            </p>
+
+                                            <p>
+                                                <b style="color: red;">NOTE:</b>  Part payment is ONLY acceptable upon receipt of THREE QUARTER of the 
+                                                Courese Fee, and the balance shall be payable prior to 1 Month to the end of the Training.
+                                            </p>
+    
+                                            <a class="btn btn-success-sm" target="_blank" href="#">Fill Form Now</a> 
+                                        </div>
+                                    </div>
+
+									
+								</div>
+
+								<div class="instructor-bx">
+									
+									<div class="ttr-post-info">
+                                        <div class="ttr-post-title">
+                                            <h2>2. Backend Web Programming</h2>
+                                        </div>
+                                        <div class="ttr-post-text">
+                                            <p style="color:blue;">
+                                             Our Backend Web Programming Training covers the following areas;
+                                            </p>
+    
+                                   
+                                            <ul>
+                                                <li>Backend Programming: <b>The Big Picture.</b> </li>
+                                                <li>Python Programming: <b>Beginner - Intermediate.</b> </li>
+                                                <li>Python Frameworks: <b>The Big Picture.</b> </li>
+                                                <li>Django Framework: <b>The Big Picture.</b> </li>
+                                                <li>Setting Up Development Environment: <b>Getting Started - Intermediate.</b>  </li>
+                                                <li>Django Framework: <b>Beginner - Intermediate.</b> </li>
+                                                <li>Django Host Configuration: <b>Getting Started.</b> </li>
+                                                <li>Course Project: 6 Weeks.</li>
+                                            </ul>
+    
+                                            <p>
+                                                <b>COURSE DURATION:</b>  <b style="color:red ;">3 Months</b> 
+                                            </p>
+    
+                                            <p>
+                                                <b>COURSE PIN FEE:</b>  <b style="color:red;">N5,000.00</b> 
+                                            </p>
+
+                                            <p>
+                                                <b>COURSE  FEE:</b>  <b style="color:red;">N25,000.00</b> 
+                                            </p>
+
+                                            <p>
+                                                <b style="color: red;">NOTE:</b>  Part payment is ONLY acceptable upon receipt of THREE QUARTER of the 
+                                                Courese Fee, and the balance shall be payable prior to 1 Month to the end of the Training.
+                                            </p>
+    
+                                            <a class="btn btn-success-sm" target="_blank" href="#">Fill Form Now</a> 
+                                        </div>
+                                    </div>
+
+									
+								</div>
+								
+								
+							</div>
+							
+							
+						</div>
+						
+					</div>
+				</div>
+            </div>
+        </div>
+
+
+
+{% endblock %}
