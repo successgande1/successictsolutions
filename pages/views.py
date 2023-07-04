@@ -78,21 +78,24 @@ def develop_website(request):
         'page_title':page_title,
     }
     return render(request, 'pages/web-dev.html', context)
-#Programming view
-def trainings(request):
-    page_title = 'Training'
-    context = {
-        'page_title':page_title,
-    }
-    return render(request, 'pages/training_programs.html', context)
 
-#computer operations training view
+#Admission Process view
 def admission_process(request):
     page_title = 'Admission Process'
     context = {
         'page_title':page_title,
     }
     return render(request, 'pages/admission_process.html', context)
+
+#Training Programes view
+def trainings(request): 
+    page_title = 'Training'
+    context = {
+        'page_title':page_title,
+    }
+    return render(request, 'pages/training_programs.html', context)
+
+
 
 #Pre-Application view
 def pre_application(request):

@@ -4,13 +4,17 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-#Computer Training Categories
-CATEGORY_ADMISSION = (
-    ('Computer Literacy', 'Computer Literacy'),
-    ('Applications Training', 'Applications Training'),
-    ('Frontend Training', 'Frontend Training'),
-    ('Backend Training', 'Backend Training'),
-) 
+# #Computer Training Categories
+# CATEGORY_ADMISSION = (
+#     ('Computer Literacy', 'Computer Literacy'),
+#     ('Computer Literacy Scholarship', 'Computer Literacy Scholarship'),
+#     ('Applications Training', 'Applications Training'),
+#     ('Applications Training Scholarship', 'Applications Training Scholarship'),
+#     ('Frontend Training', 'Frontend Training'),
+#     ('Frontend Training Scholarship', 'Frontend Training Scholarship'),
+#     ('Backend Training', 'Backend Training'),
+#     ('Backend Training Scholarship', 'Backend Training Scholarship'),
+# ) 
 
 #Pre-Admission Model
 # class Expenditure(models.Model):  

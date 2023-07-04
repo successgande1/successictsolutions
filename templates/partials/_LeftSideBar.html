@@ -18,35 +18,61 @@
         <nav class="ttr-sidebar-navi">
             <ul>
                 <li>
-                    <a href="" class="ttr-material-button">
+                    <a href="{% url 'dashboard-index' %}" class="ttr-material-button">
                         <span class="ttr-icon"><i class="ti-home"></i></span>
                         <span class="ttr-label">Dashboard</span>
                     </a>
                 </li>
                 
                 <!--Check if User is login and is also a staff and a superuser-->
-                {% if user.is_authenticated and user.is_staff and user.is_superuser %}
+                {% if user.is_authenticated and user.is_superuser %}
 
-                
 
                 <li>
                     <a href="#" class="ttr-material-button">
                         <span class="ttr-icon"><i class="ti-email"></i></span>
-                        <span class="ttr-label">Reports</span>
+                        <span class="ttr-label">Staff Management</span>
                         <span class="ttr-arrow-icon"><i class="fa fa-angle-down"></i></span>
                     </a>
                     <ul>
                        
                         <li>
-                            <a href="" class="ttr-material-button"><span class="ttr-label">Approve Scholarship</span></a>
+                            <a href="" class="ttr-material-button"><span class="ttr-label">Add Staff</span></a>
                         </li>
 
                         <li>
-                            <a href="" class="ttr-material-button"><span class="ttr-label">Approved List</span></a>
+                            <a href="" class="ttr-material-button"><span class="ttr-label">View Staff</span></a>
+                        </li>
+                    </ul>
+                </li>
+                
+
+                <li>
+                    <a href="#" class="ttr-material-button">
+                        <span class="ttr-icon"><i class="ti-email"></i></span>
+                        <span class="ttr-label">Courses & Tickets</span>
+                        <span class="ttr-arrow-icon"><i class="fa fa-angle-down"></i></span>
+                    </a>
+                    <ul>
+                       
+                        <li>
+                            <a href="{% url 'create-course' %}" class="ttr-material-button"><span class="ttr-label">Add Course</span></a>
                         </li>
 
                         <li>
-                            <a href="" class="ttr-material-button"><span class="ttr-label">View Scholarships</span></a>
+                            <a href="{% url 'list-course' %}" class="ttr-material-button"><span class="ttr-label">View Courses</span></a>
+                        </li>
+
+                        <li>
+                            <a href="{% url 'create-ticket' %}" class="ttr-material-button"><span class="ttr-label">Create Ticket</span></a>
+                        </li>
+
+                        <li>
+                            <a href="{% url 'list-ticket' %}" class="ttr-material-button"><span class="ttr-label">View Tickets</span></a>
+                        </li>
+
+                        <li>
+                            <a href="{% url 'list-pin' %}" class="ttr-material-button"><span class="ttr-label">Check Pin</span></a>
                         </li>
 
                        
@@ -56,7 +82,7 @@
                         </li>
 
                         <li>
-                            <a href="{% url 'user-logout' %}" class="ttr-material-button"><span class="ttr-label">Logout</span></a>
+                            <a href="" class="ttr-material-button"><span class="ttr-label">Logout</span></a>
                         </li>
 
                     </ul>
@@ -70,6 +96,12 @@
 
 
              
+                <li>
+                    <a href="" class="ttr-material-button">
+                        <span class="ttr-icon"><i class="ti-book"></i></span>
+                        <span class="ttr-label">My Profile</span></a>
+                </li>
+
                 <li>
                     <a href="" class="ttr-material-button">
                         <span class="ttr-icon"><i class="ti-book"></i></span>

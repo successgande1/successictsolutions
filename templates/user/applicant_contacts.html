@@ -1,0 +1,94 @@
+{% extends 'dashboard_base.html' %}
+
+{% block title %} {{ user.username }} | {{page_title}} {% endblock %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+<!-- Left sidebar menu start -->
+{% include 'partials/_LeftSideBar.html' %}
+<!-- Left sidebar menu end -->
+
+<main class="ttr-wrapper">
+   
+        
+        
+        <div class="container-fluid">
+            	
+            <div class="row">
+                <!-- Alerts-->	
+				{% include 'partials/_alerts.html' %}
+				<!-- Alerts End-->
+                <!-- Your Profile Views Chart -->
+                <div class="col-md-12">
+                    <span class="h4" style="color: green;">Course of Choice: {{user.applicant.course_ticket}}</span>
+                    <hr>
+                    <table class="table bg-white table-borderless">
+                        <tbody>
+                          <tr>
+                            <th scope="row">State Origin :</th>
+                            <td>{{user.contactdetails.state_origin}}</td> 
+                          </tr>   
+                          <tr>
+                            <th scope="row">Local Govt. Origin:</th>
+                            <td>{{user.contactdetails.lga_origin}}</td>                                   
+                          </tr>  
+                          <tr>
+                            <th scope="row">Applicant's Phone:</th>
+                            <td>{{user.contactdetails.phone}}</td>                                   
+                          </tr> 
+                          
+                          <tr>
+                            <th scope="row">Applicant's Home Town:</th>
+                            <td>{{user.contactdetails.home_town}}</td>                                   
+                          </tr> 
+
+                          <tr>
+                            <th scope="row">Applicant's Village Name:</th>
+                            <td>{{user.contactdetails.village}}</td>                                   
+                          </tr> 
+
+                          <tr>
+                            <th scope="row">Applicant's Permanent Address:</th>
+                            <td>{{user.contactdetails.permanent_address}}</td>                                   
+                          </tr> 
+                          
+                          <tr>
+                            <th scope="row">Referee Name:</th>
+                            <td>{{user.contactdetails.contact_person}}</td>                                   
+                          </tr> 
+
+                          <tr>
+                            <th scope="row">Referee Phone:</th>
+                            <td>{{user.contactdetails.contact_phone}}</td>                                   
+                          </tr> 
+
+                          <tr>
+                            <th scope="row">Referee Occupation:</th>
+                            <td>{{user.contactdetails.contact_occupation}}</td>                                   
+                          </tr> 
+
+                          <tr>
+                            <th scope="row">Referee Relationship:</th>
+                            <td>{{user.contactdetails.contact_relationship}}</td>                                   
+                          </tr> 
+                                          
+                        </tbody>
+
+                      </table>
+
+                      <a class="btn btn-success mr-5" href=" ">Edit</a> <a class="btn btn-success ml-5" href=" {% url 'applicant-session' %} ">Continue</a>
+                      
+                </div>
+                <!-- Your Profile Views Chart END-->
+            </div>
+        </div>
+        
+    
+</main>
+
+{% endblock %}

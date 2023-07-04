@@ -1,0 +1,272 @@
+{% extends 'dashboard_base.html' %}
+
+{% block title %} Confirmation | {{ user.profile.surname }} {% endblock %}
+
+{% load static %}
+
+{% load bootstrap4 %}
+
+{% load humanize %}
+
+
+{% block content %}
+
+<!-- Left sidebar menu start -->
+{% include 'partials/_LeftSideBar.html' %}
+<!-- Left sidebar menu end -->
+
+<main class="ttr-wrapper">
+    <div class="container-fluid">
+        <div class="db-breadcrumb">
+            <h4 class="breadcrumb-title" style="color: rgb(4, 149, 16);">Course Registration Confirmation.</h4>
+            
+        </div>	
+        <div class="row">
+            <!-- Your Profile Views Chart -->
+            <div class="col-lg-12 m-b30">
+                <div class="container">
+                    <div class="row my-4">
+
+                      <!--Alert Message Division-->
+                      {% include 'partials/_alerts.html' %}
+                      <!--Alert Message Division Ends-->
+
+                      <!--Notice Board Division-->
+                     
+                      <!--Notice Board Division Ends-->
+
+                        <div class="col-md-12">
+                           <div class="card">
+                               <div class="card-header bg-info text-white text-center">
+                                Application For Admission Preview
+                               </div>
+                               
+                               <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        <span class="h5" style="color: green;">Personal Information</span><a class="btn btn-success ml-5" href="{% url 'user-profile-update' %}">Edit</a>
+                                        <hr>
+                                        <table class="table bg-white table-borderless">
+                                            <tbody>
+                                              <tr>
+                                                <th scope="row">Surname</th>
+                                                <td>{{user.profile.surname}}</td>
+                                              </tr>   
+                                              <tr>
+                                                <th scope="row">Othernames:</th>
+                                                <td>{{user.profile.othernames}}</td>                                   
+                                              </tr>  
+                                               
+                                              <tr>
+                                                <th scope="row">Gender:</th>
+                                                <td>{{user.profile.gender}}</td>                                   
+                                              </tr>   
+
+                                              <tr>
+                                                <th scope="row">Marital Status:</th>
+                                                <td>{{user.profile.marital_status}}</td>                                   
+                                              </tr>
+
+                                              
+                                              <tr>
+                                                <th scope="row">Marital Status:</th>
+                                                <td>{{user.profile.age}}</td>                                   
+                                              </tr>
+
+                                              
+                                              <tr>
+                                                <th scope="row">Marital Status:</th>
+                                                <td>{{user.profile.marital_status}}</td>                                   
+                                              </tr>
+                                               
+                                            </tbody>
+                                        </table>
+                                         
+                                    </div>
+                                      <div class="col-md-2 mt-5">
+                                          <img class="img-thumbnail" width="170" height="200" src="{{ user.profile.image.url }}" alt="applicant picture">
+                                      </div>
+                                    </div>
+
+                                    <div class="row">
+                                      <div class="col-md-12">
+                                        <span class="h4" style="color: green;">Contact Details</span><a class="btn btn-success ml-5" href="{% url 'user-profile-update' %}">Edit</a>
+                                          <hr>
+                                          <table class="table bg-white table-borderless">
+                                              <tbody>
+                                                <tr>
+                                                  <th scope="row">Phone:</th>
+                                                  <td>{{user.contactdetails.phone}}</td>                                   
+                                                </tr> 
+                                                <tr>
+                                                  <th scope="row">State Origin:</th>
+                                                  <td>{{ user.contactdetails.state_origin }}</td>
+                                                </tr>   
+                                                <tr>
+                                                  <th scope="row">Local Govt. Origin:</th>
+                                                  <td>{{ user.contactdetails.lga_origin  }}</td>                                   
+                                                </tr>
+                                                <tr>
+                                                  <th scope="row"> Home Town:</th>
+                                                  <td>{{ user.contactdetails.home_town  }}</td>                                   
+                                                </tr>
+                                               
+                                                <tr>
+                                                  <th scope="row">Village Name:</th>
+                                                  <td>{{ user.contactdetails.village  }}</td>                                   
+                                                </tr>  
+                                                <tr>
+                                                  <th scope="row">Permanent Address:</th>
+                                                  <td>{{ user.contactdetails.permanent_address }}</td>                                   
+                                                </tr>  
+                                                <tr>
+                                                  <th scope="row">Contact Person:</th> 
+                                                  <td>{{ user.contactdetails.contact_person }}</td>                                   
+                                                </tr>
+
+                                                <tr>
+                                                  <th scope="row" >Contact Person Phone:</th> 
+                                                  <td >{{ user.contactdetails.contact_phone }}</td>                                   
+                                                </tr> 
+
+                                                <tr>
+                                                  <th scope="row" >Contact Person Occupation:</th> 
+                                                  <td >{{ user.contactdetails.contact_occupation }}</td>                                   
+                                                </tr> 
+
+                                                <tr>
+                                                  <th scope="row" >Contact Person Relationship:</th> 
+                                                  <td >{{ user.contactdetails.contact_relationship }}</td>                                   
+                                                </tr> 
+
+                                                 
+                                                
+                                                
+                                              </tbody>
+                                          </table>
+                                      </div>
+                                  </div>
+  
+                                     
+                                          
+                                          <div class="row">
+                                              <div class="col-md-12">
+                                                  <span class="h4" style="color: green;">Education Record</span><a class="btn btn-success ml-5" href="{% url 'user-profile-update' %}">Edit</a>
+                                                  <hr>
+                                                  <table class="table bg-white table-borderless">
+                                                      <tbody>
+                                                        <tr>
+                                                          <th scope="row"> Qualification:</th>
+                                                          <td> {{ user.education.qualification }} </td>
+                                                        </tr>   
+                                                        <tr>
+                                                          <th scope="row">Name of Institution:</th>
+                                                          <td>{{ user.education.instition }}</td>                                   
+                                                        </tr>  
+                                                        <tr>
+                                                          <th scope="row">Year of Graduation:</th>
+                                                          <td>{{user.education.graduation}}</td>                                   
+                                                        </tr>  
+                                                        
+                                                        
+                                                      </tbody>
+                                                  </table>
+                                              </div>
+                                          </div>
+
+                                          <div class="row">
+                                            <div class="col-md-12">
+                                                <span class="h4" style="color: green;">Course of Choice</span><a class="btn btn-success ml-5" href="{% url 'user-profile-update' %}">Edit</a>
+                                                <hr>
+                                                <table class="table bg-white table-borderless">
+                                                    <tbody>
+                                                      <tr>
+                                                        <th scope="row"> Course Name:</th>
+                                                        <td> {{ user.applicant.course_ticket }} </td>
+                                                      </tr>   
+                                                      
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                          <div class="col-md-12">
+                                              <span class="h4" style="color: green;">Training Session</span><a class="btn btn-success ml-5" href="{% url 'user-profile-update' %}">Edit</a>
+                                              <hr>
+                                              <table class="table bg-white table-borderless">
+                                                  <tbody>
+                                                    <tr>
+                                                      <th scope="row"> Training Session of Choice:</th>
+                                                      <td> {{ user.tsessions.training_session }} </td>
+                                                    </tr> 
+                                                    
+                                                    <tr>
+                                                      <th scope="row"> Training Days of Choice:</th>
+                                                      <td> {{ user.tsessions.training_days }} </td>
+                                                    </tr>
+                                                    
+                                                  </tbody>
+                                              </table>
+                                          </div>
+                                      </div>
+            
+                                          <div class="row">
+                                            <div class="col-md-12">
+                                                <span class="h4" style="color: red;">Confirmation and Submission</span>
+                                                <hr>
+                                                <table class="table bg-white table-borderless">
+                                                    <tbody>
+            
+                                                    <form method="POST" enctype="multipart/form-data">
+                                                      {% csrf_token %}
+                                                      <div class="form-row">
+                                                        {% bootstrap_form form %}
+                                                        <div class="form-group col-md-12 mb-0">
+                                                          <p>
+                                                         <b style="color: rgb(143, 106, 14);">{{user.profile.surname}} {{user.profile.othernames}}</b>   , Hereby Confirm 
+                                                            that the information supplied in this Application Form
+                                                             above are a true reflection
+                                                            of my Person. 
+                                                          </p>
+                                                          <p>
+                                                            And <b style="color: red;">Note</b>  that you will not be able to edit
+                                                            your information once your Registrations is submited.
+                                                          </p>
+                                                        </div>
+                            
+                                                       
+                                                      </div>
+                            
+                                                      <input type="submit" class="btn" value="Submit Application">
+                                                  </form>
+                                                      
+                                                      
+                                                    </tbody>
+                                                </table>  
+                                            </div>
+                                          
+                                          </div>
+                                      </div>
+                                  
+                                 
+
+                               </div>
+                           </div>
+                        </div>
+                        
+                       
+                     
+                        
+                     
+                
+                    </div>
+                  </table>
+                </div>
+            </div>
+            <!-- Your Profile Views Chart END-->
+        </div>
+    </div>
+</main>
+
+{% endblock %}

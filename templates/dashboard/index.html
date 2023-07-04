@@ -1,6 +1,6 @@
 {% extends 'dashboard_base.html' %}
 
-{% block title %} Dashboard Home {% endblock %}
+{% block title %} {{page_title}} {% endblock %}
 
 {% load static %}
 
@@ -29,7 +29,7 @@
         {% if user.is_authenticated and user.is_staff and user.is_superuser %}
         
         <!-- Card -->
-        {% include 'partials/_cards.html' %}
+        {% include 'partials/_staff_cards.html' %}
         <!-- Card END -->
 
         {% include 'partials/_user_list.html' %}
