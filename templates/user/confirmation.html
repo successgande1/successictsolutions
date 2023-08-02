@@ -18,7 +18,7 @@
 <main class="ttr-wrapper">
     <div class="container-fluid">
         <div class="db-breadcrumb">
-            <h4 class="breadcrumb-title" style="color: rgb(4, 149, 16);">Course Registration Confirmation.</h4>
+            <h4 class="breadcrumb-title" style="color: rgb(4, 149, 16);">Course Application Confirmation.</h4>{{user.applicant.course_ticket}} Course
             
         </div>	
         <div class="row">
@@ -90,7 +90,7 @@
 
                                     <div class="row">
                                       <div class="col-md-12">
-                                        <span class="h4" style="color: green;">Contact Details</span><a class="btn btn-success ml-5" href="{% url 'user-profile-update' %}">Edit</a>
+                                        <span class="h4" style="color: green;">Contact Details</span><a class="btn btn-success ml-5" href="{% url 'edit-contact' user.contactdetails.id %}">Edit</a>
                                           <hr>
                                           <table class="table bg-white table-borderless">
                                               <tbody>
@@ -151,7 +151,7 @@
                                           
                                           <div class="row">
                                               <div class="col-md-12">
-                                                  <span class="h4" style="color: green;">Education Record</span><a class="btn btn-success ml-5" href="{% url 'user-profile-update' %}">Edit</a>
+                                                  <span class="h4" style="color: green;">Education Record</span><a class="btn btn-success ml-5" href="{% url 'edit-education' user.applicant.id %}">Edit</a>
                                                   <hr>
                                                   <table class="table bg-white table-borderless">
                                                       <tbody>
@@ -176,7 +176,7 @@
 
                                           <div class="row">
                                             <div class="col-md-12">
-                                                <span class="h4" style="color: green;">Course of Choice</span><a class="btn btn-success ml-5" href="{% url 'user-profile-update' %}">Edit</a>
+                                                <span class="h4" style="color: green;">Course of Choice</span>
                                                 <hr>
                                                 <table class="table bg-white table-borderless">
                                                     <tbody>
@@ -192,7 +192,7 @@
 
                                         <div class="row">
                                           <div class="col-md-12">
-                                              <span class="h4" style="color: green;">Training Session</span><a class="btn btn-success ml-5" href="{% url 'user-profile-update' %}">Edit</a>
+                                              <span class="h4" style="color: green;">Training Session</span><a class="btn btn-success ml-5" href="{% url 'edit-session' user.tsessions.id %}">Edit</a>
                                               <hr>
                                               <table class="table bg-white table-borderless">
                                                   <tbody>
@@ -228,6 +228,10 @@
                                                             that the information supplied in this Application Form
                                                              above are a true reflection
                                                             of my Person. 
+                                                          </p>
+                                                          <p>
+                                                            And that You have Read and agreed to abide by SUCCESSGANDE ICT Training Code of Conduct contained 
+                                                            <a href="">Here</a>
                                                           </p>
                                                           <p>
                                                             And <b style="color: red;">Note</b>  that you will not be able to edit

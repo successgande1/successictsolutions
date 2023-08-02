@@ -25,7 +25,7 @@
 				<!-- Alerts End-->
                 <!-- Your Profile Views Chart -->
                 <div class="col-md-12">
-                    <span class="h4" style="color: green;">Course of Choice: {{user.applicant.course_ticket}}</span>
+                    <span class="h4" style="color: green;">Contact Details for  {{user.profile.othernames}} </span>
                     <hr>
                     <table class="table bg-white table-borderless">
                         <tbody>
@@ -78,10 +78,10 @@
                           </tr> 
                                           
                         </tbody>
-
+ 
                       </table>
 
-                      <a class="btn btn-success mr-5" href=" ">Edit</a> <a class="btn btn-success ml-5" href=" {% url 'applicant-session' %} ">Continue</a>
+                      <a class="btn btn-success mr-5" href="{% url 'edit-contact' user.contactdetails.id %} ">Edit</a> <a class="btn btn-success ml-5" href=" {% url 'applicant-session' %} ">Continue</a>
                       
                 </div>
                 <!-- Your Profile Views Chart END-->

@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %} SUCCESSGANDE : Digital Solutions {% endblock%}
+{% block title %} SUCCESSGANDE : ICT Resources Ltd {% endblock%}
 
 {% load static %}
 
@@ -88,8 +88,8 @@
 								data-paddingright="[0,0,0,0]"
 								data-paddingbottom="[10,10,10,10]"
 								data-paddingleft="[0,0,0,0]"
-								style="z-index: 6; font-family:rubik; font-weight:700; text-align:center; white-space: normal;">
-									SUCCESSGANDE ICT Solutions
+								style="z-index: 6; font-family:rubik; font-weight:600; text-align:center; white-space: normal;">
+									SUCCESSGANDE ICT RESOURCES LTD
 							</div>
 
 							<!-- LAYER NR. 3 -->
@@ -111,7 +111,7 @@
 								data-paddingbottom="[0,0,0,0]"
 								data-paddingleft="[0,0,0,0]"
 								style="z-index: 7; white-space: nowrap; color:#fff; font-family:rubik; font-size:18px; font-weight:400;">
-									Reliable ICT Solutions. 
+									...Impacting Through ICT Solutions. 
 							</div>
 							
 							<!-- LAYER NR. 3 -->
@@ -134,7 +134,7 @@
 								data-paddingleft="[0,0,0,0]"
 								
 								style="z-index: 7; text-transform:capitalize; white-space: unset; color:#fff; font-family:rubik; font-size:18px; line-height:28px; font-weight:400;">
-									 We are concerned about Providing Digital Solutions Affordably.
+									 Join Us in Creating a brighter future through Technology-driven Solutions.
 							</div>
 							<!-- LAYER NR. 4 -->
 							<div class="tp-caption Newspaper-Button rev-btn " 
@@ -247,8 +247,8 @@
 								data-paddingright="[0,0,0,0]"
 								data-paddingbottom="[10,10,10,10]"
 								data-paddingleft="[0,0,0,0]"
-								style="z-index: 6; font-family:rubik; font-weight:700; text-align:center; white-space: normal;">
-									SUCCESSGANDE ICT Solutions.
+								style="z-index: 6; font-family:rubik; font-weight:600; text-align:center; white-space: normal;">
+									SUCCESSGANDE ICT RESOURCES LTD.
 							</div>
 
 							<!-- LAYER NR. 3 -->
@@ -270,7 +270,7 @@
 								data-paddingbottom="[0,0,0,0]"
 								data-paddingleft="[0,0,0,0]"
 								style="z-index: 7; white-space: nowrap;text-transform:capitalize; color:#fff; font-family:rubik; font-size:18px; font-weight:400;">
-									Businesses Gets Better  Online!
+									Partner with Us and Unlock the Potential of Digital Growth.
 							</div>
 							
 							<!-- LAYER NR. 3 -->
@@ -292,7 +292,7 @@
 								data-paddingbottom="[0,0,0,0]"
 								data-paddingleft="[0,0,0,0]"
 								style="z-index: 7; text-transform:capitalize; white-space: unset; color:#fff; font-family:rubik; font-size:18px; line-height:28px; font-weight:400;">
-									We are Passionate About Providing Digital Solutions; Just Let Us Know Your Business Need.
+									Empowering Lives through Innovative Web Solutions.
 							</div>
 							<!-- LAYER NR. 4 -->
 							<div class="tp-caption Newspaper-Button rev-btn " 
@@ -355,7 +355,7 @@
 									<div class="feature-box-sm radius bg-white">
 										<i class="fa fa-laptop"></i>
 									</div>
-									<h4><a href="{% url 'custom-software' %}">Custom Software</a></h4>
+									<h4><a href="{% url 'custom-software' %}">Web Tech. Solutions</a></h4>
 									<a href="{% url 'custom-software' %}" class="btn radius-xl">Read More</a>
 								</div>
 							</div>
@@ -369,7 +369,7 @@
 									<div class="feature-box-sm radius bg-white">
 										<i class="fa fa-laptop"></i>
 									</div>
-									<h4><a href="#">Website Development</a></h4>
+									<h4><a href="#">Digital Services</a></h4>
 									<a href="{% url 'develop-website' %}" class="btn radius-xl">Read More</a>
 								</div>
 							</div>
@@ -392,14 +392,159 @@
 				</div>
             </div>
             <!-- Our Services END -->
+
+			<!-- Recent Projects -->
+			{% include "partials/_recent_projects.html" %} 
+			<!-- Recent Projects End -->
 			
-			<!-- Popular Courses -->
+			
+			
+			<!-- Form -->
+			<!-- <div class="section-area section-sp1 ovpr-dark bg-fix online-cours" style="background-image:url('{% static 'assets/images/background/bg1.jpg' %}');">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 text-center text-white">
+							<h2>Programming Courses To Learn</h2>
+							<h5>Own Your Feature Learning New Skills</h5>
+							<form class="cours-search">
+								<div class="input-group">
+									<input type="text" class="form-control" placeholder="What do you want to learn today?	">
+									<div class="input-group-append">
+										<button class="btn" type="submit">Search</button> 
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="mw800 m-auto">
+						<div class="row">
+							<div class="col-md-4 col-sm-6">
+								<div class="cours-search-bx m-b30">
+									<div class="icon-box">
+										<h3><i class="ti-user"></i><span class="counter">100</span>K</h3>
+									</div>
+									<span class="cours-search-text">Over 100 student</span>
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-6">
+								<div class="cours-search-bx m-b30">
+									<div class="icon-box">
+										<h3><i class="ti-book"></i><span class="counter">100</span>K</h3>
+									</div>
+									<span class="cours-search-text">100 Courses.</span>
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-12">
+								<div class="cours-search-bx m-b30">
+									<div class="icon-box">
+										<h3><i class="ti-layout-list-post"></i><span class="counter">1</span>K</h3>
+									</div>
+									<span class="cours-search-text">Learn Web Programming.</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> -->
+			<!-- Form END -->
+			<!-- <div class="section-area section-sp2">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 text-center heading-bx">
+							<h2 class="title-head m-b0">Upcoming <span>Events</span></h2>
+							<p class="m-b0">Upcoming Web Development Events. </p>
+						</div>
+					</div>
+					<div class="row">
+					<div class="upcoming-event-carousel owl-carousel owl-btn-center-lr owl-btn-1 col-12 p-lr0  m-b30">
+						<div class="item">
+							<div class="event-bx">
+								<div class="action-box">
+									<img src="{% static 'assets/images/event/pic4.jpg' %}" alt="Recent Digital Solution one">
+								</div>
+								<div class="info-bx d-flex">
+									<div>
+										<div class="event-time">
+											<div class="event-date">29</div>
+											<div class="event-month">Jan.</div>
+										</div>
+									</div>
+									<div class="event-info">
+										<h4 class="event-title"><a href="#">Software Developer Education</a></h4>
+										<ul class="media-post">
+											<li><a href="#"><i class="fa fa-clock-o"></i> 9:00am 11:00am</a></li>
+											<li><a href="#"><i class="fa fa-map-marker"></i> Gboko, Benue State</a></li>
+										</ul>
+										<p>A Software Developer is a most sort after Career that young Computer Literate should know and decide on...</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="event-bx">
+								<div class="action-box">
+									<img src="{% static 'assets/images/event/pic3.jpg' %}" alt="Recent Digital Solution Two">
+								</div>
+								<div class="info-bx d-flex">
+									<div>
+										<div class="event-time">
+											<div class="event-date">29</div>
+											<div class="event-month">October</div>
+										</div>
+									</div>
+									<div class="event-info">
+										<h4 class="event-title"><a href="#">Web Development Skills Education</a></h4>
+										<ul class="media-post">
+											<li><a href="#"><i class="fa fa-clock-o"></i> 8:00am 10:30am</a></li>
+											<li><a href="#"><i class="fa fa-map-marker"></i> Gboko, Benue State</a></li>
+										</ul>
+										<p>Web Development is among the top rated soft skills in recent times which young Computer Literates needs to know...</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="event-bx">
+								<div class="action-box">
+									<img src="{% static 'assets/images/event/pic2.jpg' %}" alt="Recent Digital Solution Three">
+								</div>
+								<div class="info-bx d-flex">
+									<div>
+										<div class="event-time">
+											<div class="event-date">29</div>
+											<div class="event-month">November</div>
+										</div>
+									</div>
+									<div class="event-info">
+										<h4 class="event-title"><a href="#">Frontend Web Developer Education</a></h4>
+										<ul class="media-post">
+											<li><a href="#"><i class="fa fa-clock-o"></i> 8:30am 11:30am</a></li>
+											<li><a href="#"><i class="fa fa-map-marker"></i> Gboko, Benue State</a></li>
+										</ul>
+										<p>Frontend Web Development is all about Design and Development of Static Websites...</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					</div>
+					<div class="text-center">
+						<a href="#" class="btn">View All Event</a>
+					</div>
+				</div>
+			</div> -->
+			
+			<!-- Testimonials -->
+			{% include "partials/_testimonies.html" %}
+			<!-- Testimonials END -->
+
+			<!-- Our Services -->
 			<div class="section-area section-sp2 popular-courses-bx">
                 <div class="container">
 					<div class="row">
 						<div class="col-md-12 heading-bx left">
-							<h2 class="title-head">Programming <span>Courses</span></h2>
-							<p>It is a long established fact that Reader Change the World so are distracted by the readable content of a page</p>
+							<h2 class="title-head">Unlock <span>a World of Possibilities.</span></h2>
+							<p>Explore our diverse range of services through our engaging slide show!</p>
 						</div>
 					</div>
 					<div class="row">
@@ -560,148 +705,7 @@
 			</div>
 			<!-- Popular Courses END -->
 			
-			<!-- Form -->
-			<div class="section-area section-sp1 ovpr-dark bg-fix online-cours" style="background-image:url('{% static 'assets/images/background/bg1.jpg' %}');">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12 text-center text-white">
-							<h2>Programming Courses To Learn</h2>
-							<h5>Own Your Feature Learning New Skills</h5>
-							<form class="cours-search">
-								<div class="input-group">
-									<input type="text" class="form-control" placeholder="What do you want to learn today?	">
-									<div class="input-group-append">
-										<button class="btn" type="submit">Search</button> 
-									</div>
-								</div>
-							</form>
-						</div>
-					</div>
-					<div class="mw800 m-auto">
-						<div class="row">
-							<div class="col-md-4 col-sm-6">
-								<div class="cours-search-bx m-b30">
-									<div class="icon-box">
-										<h3><i class="ti-user"></i><span class="counter">100</span>K</h3>
-									</div>
-									<span class="cours-search-text">Over 100 student</span>
-								</div>
-							</div>
-							<div class="col-md-4 col-sm-6">
-								<div class="cours-search-bx m-b30">
-									<div class="icon-box">
-										<h3><i class="ti-book"></i><span class="counter">100</span>K</h3>
-									</div>
-									<span class="cours-search-text">100 Courses.</span>
-								</div>
-							</div>
-							<div class="col-md-4 col-sm-12">
-								<div class="cours-search-bx m-b30">
-									<div class="icon-box">
-										<h3><i class="ti-layout-list-post"></i><span class="counter">1</span>K</h3>
-									</div>
-									<span class="cours-search-text">Learn Web Programming.</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- Form END -->
-			<div class="section-area section-sp2">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12 text-center heading-bx">
-							<h2 class="title-head m-b0">Upcoming <span>Events</span></h2>
-							<p class="m-b0">Upcoming Web Development Events. </p>
-						</div>
-					</div>
-					<div class="row">
-					<div class="upcoming-event-carousel owl-carousel owl-btn-center-lr owl-btn-1 col-12 p-lr0  m-b30">
-						<div class="item">
-							<div class="event-bx">
-								<div class="action-box">
-									<img src="{% static 'assets/images/event/pic4.jpg' %}" alt="Recent Digital Solution one">
-								</div>
-								<div class="info-bx d-flex">
-									<div>
-										<div class="event-time">
-											<div class="event-date">29</div>
-											<div class="event-month">Jan.</div>
-										</div>
-									</div>
-									<div class="event-info">
-										<h4 class="event-title"><a href="#">Software Developer Education</a></h4>
-										<ul class="media-post">
-											<li><a href="#"><i class="fa fa-clock-o"></i> 9:00am 11:00am</a></li>
-											<li><a href="#"><i class="fa fa-map-marker"></i> Gboko, Benue State</a></li>
-										</ul>
-										<p>A Software Developer is a most sort after Career that young Computer Literate should know and decide on...</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="event-bx">
-								<div class="action-box">
-									<img src="{% static 'assets/images/event/pic3.jpg' %}" alt="Recent Digital Solution Two">
-								</div>
-								<div class="info-bx d-flex">
-									<div>
-										<div class="event-time">
-											<div class="event-date">29</div>
-											<div class="event-month">October</div>
-										</div>
-									</div>
-									<div class="event-info">
-										<h4 class="event-title"><a href="#">Web Development Skills Education</a></h4>
-										<ul class="media-post">
-											<li><a href="#"><i class="fa fa-clock-o"></i> 8:00am 10:30am</a></li>
-											<li><a href="#"><i class="fa fa-map-marker"></i> Gboko, Benue State</a></li>
-										</ul>
-										<p>Web Development is among the top rated soft skills in recent times which young Computer Literates needs to know...</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="event-bx">
-								<div class="action-box">
-									<img src="{% static 'assets/images/event/pic2.jpg' %}" alt="Recent Digital Solution Three">
-								</div>
-								<div class="info-bx d-flex">
-									<div>
-										<div class="event-time">
-											<div class="event-date">29</div>
-											<div class="event-month">November</div>
-										</div>
-									</div>
-									<div class="event-info">
-										<h4 class="event-title"><a href="#">Frontend Web Developer Education</a></h4>
-										<ul class="media-post">
-											<li><a href="#"><i class="fa fa-clock-o"></i> 8:30am 11:30am</a></li>
-											<li><a href="#"><i class="fa fa-map-marker"></i> Gboko, Benue State</a></li>
-										</ul>
-										<p>Frontend Web Development is all about Design and Development of Static Websites...</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					</div>
-					<div class="text-center">
-						<a href="#" class="btn">View All Event</a>
-					</div>
-				</div>
-			</div>
 			
-			<!-- Testimonials -->
-			{% include "partials/_testimonies.html" %}
-			<!-- Testimonials END -->
-			
-			<!-- Recent Projects -->
-			{% include "partials/_recent_projects.html" %} 
-			<!-- Recent News End -->
 			
         </div>
 		<!-- contact area END -->

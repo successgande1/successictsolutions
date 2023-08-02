@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'multiselectfield',
     'bootstrap4',
     'django.contrib.humanize', 
+    'imagekit',
     
 ]
 

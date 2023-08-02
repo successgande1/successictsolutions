@@ -1,0 +1,71 @@
+{% extends 'dashboard_base.html' %}
+
+{% block title %} {{ user.username }} | {{page_title}} {% endblock %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+<!-- Left sidebar menu start -->
+{% include 'partials/_LeftSideBar.html' %}
+<!-- Left sidebar menu end -->
+
+<main class="ttr-wrapper">
+   
+        
+        
+        <div class="container-fluid">
+            	
+            <div class="row">
+                <!-- Alerts-->	
+				{% include 'partials/_alerts.html' %}
+				<!-- Alerts End-->
+                <!-- Your Profile Views Chart -->
+                <div class="col-md-12">
+                    <span class="h4" style="color: green;">Questionnaire Response From: {{user.profile.othernames}}</span>
+                    <hr>
+                    <table class="table bg-white table-borderless">
+                        <tbody>
+                          <tr>
+                            <th scope="row">Computer Knowledge? :</th>
+                            <td>{{user.questionnaire.computer_knowledge}}</td> 
+                          </tr>   
+                          <tr>
+                            <th scope="row">Do you Own a Usable Laptop?:</th>
+                            <td>{{user.questionnaire.own_laptop}}</td>                                   
+                          </tr>  
+                          <tr>
+                            <th scope="row">Do you own a Usable SmartPhone:</th>
+                            <td>{{user.questionnaire.own_phone}}</td>                                   
+                          </tr> 
+                          <tr>
+                            <th scope="row">Can You Browse the Internet?:</th>
+                            <td>{{user.questionnaire.browse_internet}}</td>                                   
+                          </tr> 
+                          <tr>
+                            <th scope="row">Do you have any Knowledge on Computer Programming?:</th>
+                            <td>{{user.questionnaire.know_programming}}</td>                                   
+                          </tr>
+                          <tr>
+                            <th scope="row">Can You Learn All-Night?:</th>
+                            <td>{{user.questionnaire.learn_night}}</td>                                   
+                          </tr>
+                                   
+                        </tbody>
+ 
+                      </table>
+
+                      <a class="btn btn-success mr-5" href=" ">Edit</a> <a class="btn btn-success ml-5" href=" {% url 'app-submit' %} ">Continue</a>
+                      
+                </div>
+                <!-- Your Profile Views Chart END-->
+            </div>
+        </div>
+        
+    
+</main>
+
+{% endblock %}

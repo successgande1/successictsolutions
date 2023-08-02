@@ -38,9 +38,18 @@ class ProfileUpdateForm(forms.ModelForm):
         fields = ['surname', 'othernames', 'gender', 'marital_status', 'age', 'image'] 
 
 # #Create Guest User Form
-# class GuestUserForm(UserCreationForm):
-#     email = forms.EmailField
-#     #Get Guest Group from DB
+class AddStaffForm(forms.ModelForm):
+    
+    instition = forms.CharField(label="Institution Name :", 
+                    widget=forms.TextInput(attrs={'placeholder': 'Applicant\'s Institution Full Name and Address of Institution'}))
+    
+    graduation = forms.CharField(label="Year of Graduation:", 
+                    widget=forms.TextInput(attrs={'placeholder': 'Applicant\'s Year of Graduation'}))
+    
+    class Meta:
+        model = Education
+        fields = ['qualification','instition',  'graduation']
+
 
 
 class AddEducationForm(forms.ModelForm):
@@ -79,6 +88,29 @@ class AddContactDetailForm(forms.ModelForm):
         model = Contactdetails
         fields = ['state_origin','lga_origin',  'phone', 'home_town', 'village', 'permanent_address', 'contact_person', 'contact_phone', 'contact_occupation', 'contact_relationship']
 
+class EditContactDetailForm(forms.ModelForm):
+    
+    state_origin = forms.CharField(label="State of Origin :", 
+                    widget=forms.TextInput(attrs={'placeholder': 'Applicant\'s State of Origin'}))
+    
+    lga_origin = forms.CharField(label="Local Govt. Origin:", 
+                    widget=forms.TextInput(attrs={'placeholder': 'Applicant\'s Local Govt. of Origin'}))
+    
+    contact_person = forms.CharField(label="Referee Full Name:", 
+                    widget=forms.TextInput(attrs={'placeholder': 'Applicant\'s Referee Full Name'}))
+    
+    contact_phone = forms.CharField(label="Referee Phone Number:", 
+                    widget=forms.TextInput(attrs={'placeholder': 'Applicant\'s Referee Phone Number'}))
+    
+    contact_occupation = forms.CharField(label="Referee Occupation:", 
+                    widget=forms.TextInput(attrs={'placeholder': 'Applicant\'s Referee Occupation'}))
+    
+    
+    
+    class Meta:
+        model = Contactdetails
+        fields = ('state_origin','lga_origin',  'phone', 'home_town', 'village', 'permanent_address', 'contact_person', 'contact_phone', 'contact_occupation', 'contact_relationship')
+
 #Add Training Session Form
 class AddTrainingSessionForm(forms.ModelForm):
     
@@ -91,20 +123,20 @@ class AddQuestionnaireForm(forms.ModelForm):
     own_laptop = forms.CharField(label="Do You Own a Usable Laptop? :", 
                     widget=forms.TextInput(attrs={'placeholder': 'Answer Yes or No'}))
     
-    own_phone = forms.CharField(label="Do You Have Android Phone?:", 
+    own_phone = forms.CharField(label="Do You Have SmartPhone?:", 
                     widget=forms.TextInput(attrs={'placeholder': 'Answer Yes or No'}))
     
     browse_internet = forms.CharField(label="Can You Browse Internet?:", 
                     widget=forms.TextInput(attrs={'placeholder': 'Answer Yes or No'}))
     
-    know_programming = forms.CharField(label="Do You Know Programming?:", 
+    know_programming = forms.CharField(label="Any Programming Knowledge?:", 
                     widget=forms.TextInput(attrs={'placeholder': 'Answer Yes or No'}))
     
-    learn_night = forms.CharField(label="Do You Know Programming?:", 
+    learn_night = forms.CharField(label="Can You Learn All-Night?:", 
                     widget=forms.TextInput(attrs={'placeholder': 'Answer Yes or No'}))
     
     class Meta:
-        model = questionnaire
+        model = Questionnaire
         fields = ['computer_knowledge', 'own_laptop', 'own_phone', 'browse_internet','know_programming','learn_night']
 
 

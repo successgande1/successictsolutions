@@ -23,6 +23,18 @@ from django.db.models import F, Q
 # from stockmgt.models import *
 from . forms import *
 from django.shortcuts import get_object_or_404
+from dashboard.helpers import (
+    get_profile,
+    profile_complete,
+    get_education,
+    education_complete,
+    get_contact_details,
+    contact_complete,
+    get_training_session,
+    session_complete,
+    get_question_response,
+    questionnaire_complete
+)
 
 
 from django.contrib import messages
@@ -371,7 +383,7 @@ def add_education(request):
                 form.save()
                 #Send Success Message
                 messages.success(request, 'Education Added, Review Details To Continue.')
-                return redirect('view-education')
+                return redirect('applicant-contact')
         else:
             form = AddEducationForm()
         context = {
@@ -385,8 +397,29 @@ def add_education(request):
             return redirect('app-submit')
         
 #Method for viewing Education Detail
-def view_education(request):
-    return render(request, 'user/education_detail.html') 
+class EducationDetail(LoginRequiredMixin, DetailView):
+    """Applicant View Education Details"""
+    template_name = 'user/education_detail.html'
+    model = Education
+    page_title = 'View Education'
+
+    def get_success_url(self):
+        return reverse_lazy('applicant-contact', kwargs = {'pk' : self.get_object().id})
+    
+class UpdateEducationDetails(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    template_name = 'user/add_education.html'
+    form_class = AddEducationForm
+    model = Education 
+    page_title = 'Edit Education'
+
+    
+    #Function to get Object Key for url
+    def get_success_url(self):
+        return reverse_lazy('view-education', kwargs = {'pk':self.get_object().id})
+    
+    def test_func(self):
+        return self.get_object().applicant_id == self.request.user.pk 
+    
 
 
 @login_required(login_url='user-login')
@@ -407,36 +440,59 @@ def add_contact(request):
                 form.save()
                 #Send Success Message
                 messages.success(request, 'Contact Details Added Successfully')
-                return redirect('view-contacts')
+                return redirect('applicant-session')
         else:
             form = AddContactDetailForm()
         context = {
             'form':form,
+            'page_title': 'Add Contact',
         }
         return render(request, 'user/add_contact.html', context) 
     else:
-        if check_contact.qualification != None:
-            return redirect('view-education')
+        if contact_complete(check_contact) :
+            return redirect('dashboard-index')
         else:
             return redirect('app-submit')
 
-#Applicant view add Contact details view
-@login_required(login_url='user-login')
-def view_contact_details(request):
-    if 'user' not in request.session:
-        messages.error(request, 'Something Went Wrong')
-        return redirect('user-login')
-    else:
-        context = {   
-        'page_title':'Applicant Contacts',
-        }
-        return render(request, 'user/applicant_contacts.html', context)
+    
+#Applicant Edit Contact Details
+class UpdateContactDetails(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    template_name = 'user/add_contact.html'
+    form_class = AddContactDetailForm
+    model = Contactdetails 
+    page_title = 'Edit Contact'
+
+    
+    #Function to get Object Key for url
+    def get_success_url(self):
+        return reverse_lazy('contact-details', kwargs = {'pk':self.get_object().id})
+
+    def test_func(self):
+        return self.get_object().applicant_id == self.request.user.pk 
+    
+class ContactDetail(LoginRequiredMixin, DetailView):
+    """Applicant View Contact Details"""
+    template_name = 'user/applicant_contacts.html'
+    model = Contactdetails
+    page_title = 'View Contacts'
+
+    #Get Context Data on the HTML
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['page_title'] = self.page_title
+        return context
+
+    def get_success_url(self):
+        return reverse_lazy('applicant-session', kwargs = {'pk' : self.get_object().id})
+    
 
     
    
 @login_required(login_url='user-login')
 def training_sessions(request):
     #check if user is in the session
+    logged_user = request.user
+    questionnaire = get_question_response(logged_user)
     if 'user' not in request.session:
         messages.error(request, 'Something Went Wrong')
         return redirect('user-login')
@@ -457,7 +513,7 @@ def training_sessions(request):
                         #Save the form
                         form.save()
                         #Send Success Message
-                        messages.success(request, f'{training_session_name}, {training_days_name} Choosen for  {request.user.applicant.course_ticket}  Training Course')
+                        messages.success(request, f'{training_session_name}, {training_days_name} Choosen for  {request.user.applicant.course_ticket}  Course')
                         return redirect('codeof_conduct')
                 else:
                     form = AddTrainingSessionForm()
@@ -467,17 +523,58 @@ def training_sessions(request):
                 }
                 return render(request, 'user/training_sessions.html', context) 
         else:
-            if user_training_session.tsession != None:
-                return redirect('view-education')
-            else:
+            if session_complete(user_training_session) and questionnaire_complete(questionnaire) :
                 return redirect('app-submit')
+            else:
+                return redirect('user-login')
+                
+
+    
+class UpdateTrainingSessionDetails(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    template_name = 'user/training_sessions.html'
+    form_class = AddTrainingSessionForm
+    model = Tsessions 
+    page_title = 'Edit Training Session'
+
+    #Get Context Data on the HTML
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['page_title'] = self.page_title
+        return context
+
+    
+    #Function to get Object Key for url
+    def get_success_url(self):
+        return reverse_lazy('view-session', kwargs = {'pk':self.get_object().id})
+    
+    def test_func(self):
+        return self.get_object().applicant_id == self.request.user.pk 
+
+class TrainingSessionDetail(LoginRequiredMixin, DetailView):
+    """Applicant View Session Details"""
+    template_name = 'user/applicant_session.html'
+    model = Tsessions
+    page_title = 'View Training Session'
+
+    #Get Context Data
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['page_title'] = self.page_title
+        return context
+
+    def get_success_url(self):
+        return reverse_lazy('app_view_questions', kwargs = {'pk' : self.get_object().id})
             
-#Applicant Code of Conduct View
+#Applicant Answer Questionnaire View
 @login_required(login_url='user-login')
-def codeof_conduct(request):
+def questionnaire(request):
+    logged_user = request.user
+    questionnaire = get_question_response(logged_user)
     if 'user' not in request.session:
         messages.error(request, 'Something Went Wrong')
         return redirect('user-login')
+    elif questionnaire_complete(questionnaire): #Check if Questionnaire is submitted
+        return redirect('app-submit') 
     else:
         app_course = Applicant.objects.get(app_name=request.user)
         Applicant_course = app_course.course_ticket.course_name
@@ -495,10 +592,47 @@ def codeof_conduct(request):
             form = AddQuestionnaireForm()
         context = {   
             'Applicant_course':Applicant_course,
-        'page_title':'Code of Conduct',
+        'page_title':'Questionnaire',
         'form':form,
         }
-        return render(request, 'user/codeof_conduct.html', context)
+        return render(request, 'user/questionnaire.html', context)
+    
+class UpdateQuestionnaireDetails(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    template_name = 'user/questionnaire.html'
+    form_class = AddQuestionnaireForm
+    model = Questionnaire 
+    page_title = 'Edit Response'
+
+    #Get Context Data on the HTML
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['page_title'] = self.page_title
+        return context
+
+    
+    #Function to get Object Key for url
+    def get_success_url(self):
+        return reverse_lazy('view-response', kwargs = {'pk':self.get_object().id})
+    
+    def test_func(self):
+        return self.get_object().applicant_id == self.request.user.pk 
+
+class QuestionnaireDetail(LoginRequiredMixin, DetailView):
+    """Applicant View Questionnaire Details"""
+    template_name = 'user/app_questionnaire.html'
+    model = Tsessions
+    page_title = 'View Responses'
+
+    #Get Context Data
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['page_title'] = self.page_title
+        return context
+
+    def get_success_url(self):
+        return reverse_lazy('app-submit', kwargs = {'pk' : self.get_object().id})
+    
+    
         
 @login_required(login_url='user-login')
 def SubmitApp(request):

@@ -8,7 +8,10 @@ from random import randint
 import uuid
 from json import JSONEncoder
 from uuid import UUID
-
+from imagekit.models import ProcessedImageField
+from django.core.exceptions import ValidationError
+from django.utils.deconstruct import deconstructible
+from imagekit.processors import ResizeToFill, Transpose
 from django.contrib.auth.models import User, Group
 from multiselectfield import MultiSelectField
 
@@ -99,26 +102,38 @@ YES_NO = (
 )
 
 
+@deconstructible
+class FileExtensionValidator:
+    """ImageKit Validation Decorator"""
+    def __init__(self, extensions):
+        self.extensions = extensions
+
+    def __call__(self, value):
+        extension = value.name.split('.')[-1].lower()
+        if extension not in self.extensions:
+            valid_extensions = ', '.join(self.extensions)
+            raise ValidationError(f"Invalid file extension. Only {valid_extensions} files are allowed.")
+
+image_extensions = ['jpeg', 'jpg', 'gif', 'png']
+
 #User Profile Model
-class Profile(models.Model):
+class Profile(models.Model): 
     user = models.OneToOneField(User, on_delete=models.CASCADE, null = True)
     surname = models.CharField(max_length=20, null=True)
     othernames = models.CharField(max_length=40, null=True)
     gender = models.CharField(max_length=6, choices=GENDER, blank=True, null=True)
     marital_status = models.CharField(max_length=20, choices=MARITAL_STATUS, blank=True, null=True)
     age = models.CharField(max_length=3, null=True)
-    image = models.ImageField(default='avatar.jpg', blank=False, null=False, upload_to ='profile_images', 
-    )
+    image = ProcessedImageField(
+                                    upload_to='profile_images',
+                                    processors=[Transpose(), ResizeToFill(150, 200)],
+                                    format='JPEG',
+                                    options={'quality': 97},
+                                    validators=[FileExtensionValidator(image_extensions)],
+                                    default='avatar.jpg'
+                                )
 
-    #Method to save Image
-    def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)
-        img = Image.open(self.image.path)
-    #Check for Image Height and Width then resize it then save
-        if img.height > 200 or img.width > 150:
-            output_size = (150, 250)
-            img.thumbnail(output_size)
-            img.save(self.image.path)
+    
  
     def __str__(self):
         return f'{self.user.username}-Profile'
@@ -160,16 +175,6 @@ class Tsessions(models.Model):
     def __str__(self):
         return f'{self.applicant}-Training Sessions'
 
-# #Student Table
-# class Student(models.Model):
-#     sid = models.CharField(max_length=10, primary_key=True)
-#     suser = models.ForeignKey(Profile, on_delete=models.CASCADE, null=True)
-#     mstatus = models.CharField(max_length=20, choices=MARITAL_STATUS, null=True)
-#     sage = models.IntegerField(null=True)
-    
-    
-#     def __str__(self):
-#         return f'{self.suser}-Profile'
 
 
 class Course(models.Model):
@@ -245,7 +250,7 @@ class Studentcourse(models.Model):
     def __str__(self):
         return f"{self.courseid}" 
     
-class questionnaire(models.Model):
+class Questionnaire(models.Model):
     applicant = models.OneToOneField(User, on_delete=models.CASCADE, blank=True) 
     computer_knowledge = models.CharField(max_length=100, choices=YES_NO, null=True)
     own_laptop = models.CharField(max_length=200, null=True)
@@ -280,7 +285,7 @@ class Employee(models.Model):
     STAFF_CATEGORY = [
         ('Instructor', 'Instructor'),
         ('Computer Operator', 'Computer Operator'),
-        ('Cashier', 'Cashier'),
+        ('Cashier', 'Cashier'), 
     ]
     staff_user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     staff_id = models.UUIDField(primary_key = True, editable = False, default=uuid.uuid4)
@@ -288,5 +293,5 @@ class Employee(models.Model):
     date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f'Application Number: {self.staff_user}-{self.staff_role}'
+        return f'Staff: {self.staff_user}-{self.staff_role}'
 

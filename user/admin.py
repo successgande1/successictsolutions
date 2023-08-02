@@ -51,7 +51,7 @@ admin.site.register(Contactdetails)
 
 admin.site.register(Tsessions)
 
-admin.site.register(questionnaire)
+admin.site.register(Questionnaire)
 
 admin.site.register(Employee)
  

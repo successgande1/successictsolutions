@@ -36,7 +36,7 @@
                         <div class="col-md-12" id="slip">
                            <div class="card">
                                <div class="card-header bg-info text-white text-center" style="text-align: center;">
-                               2022 WASU SCHOLARSHIP APPLICATION SLIP
+                               SUCCESSGANDE ICT TRAINING APPLICATION SLIP
                                </div>
                                
                                <div class="card-body">
@@ -65,26 +65,35 @@
                                               </tr>  
                                               <tr>
                                                 <th scope="row" style="text-align: left;">Phone:</th>
-                                                <td>{{user.profile.phone}}</td>                                   
+                                                <td>{{user.contactdetails.phone}}</td>                                   
                                               </tr>  
                                               <tr>
                                                 <th scope="row" style="text-align: left;">Email:</th>
                                                 <td>{{user.email}}</td>                                   
                                               </tr>   
-                                              <tr>
-                                                <th scope="row" style="text-align: left;">Nation:</th>
-                                                <td>{{user.profile.nation}}</td>                                   
-                                              </tr> 
+                                              
                                               <tr>
                                                 <th scope="row" style="text-align: left;">State/Province:</th>
-                                                <td>{{user.profile.state}}</td>                                   
+                                                <td>{{user.contactdetails.state_origin}}</td>                                   
                                               </tr>  
                                               
                                               
                                               <tr>
-                                                <th scope="row" style="text-align: left;">Phone Number:</th>
-                                                <td>{{user.profile.phone}}</td>                                   
-                                              </tr>                
+                                                <th scope="row" style="text-align: left;">Local Govt:</th>
+                                                <td>{{user.contactdetails.lga_origin}}</td>                                   
+                                              </tr>  
+                                              <tr>
+                                                <th scope="row" style="text-align: left;">Home Town:</th>
+                                                <td>{{user.contactdetails.home_town}}</td>                                   
+                                              </tr>     
+                                              <tr>
+                                                <th scope="row" style="text-align: left;">Village:</th>
+                                                <td>{{user.contactdetails.village}}</td>                                   
+                                              </tr>  
+                                              <tr>
+                                                <th scope="row" style="text-align: left;">Permanent Address:</th>
+                                                <td>{{user.contactdetails.permanent_address}}</td>                                   
+                                              </tr>              
                                             </tbody>
                                         </table>
                                          
@@ -108,52 +117,101 @@
                                                           <td>{{user.education.instition}}</td>                                   
                                                         </tr>  
                                                         <tr>
-                                                          <th scope="row" style="text-align: left;">Admission/Matriculation Number:</th>
-                                                          <td>{{user.education.matnumber}}</td>                                   
-                                                        </tr>  
-                                                        <tr>
-                                                          <th scope="row" style="text-align: left;">Referee:</th>
-                                                          <td>{{user.education.reference}}</td>                                   
-                                                        </tr>   
-                                                        <tr>
-                                                          <th scope="row" style="text-align: left;">Referee Phone Number:</th>
-                                                          <td>{{user.education.refphone}}</td>                                   
-                                                        </tr> 
-                                                        <tr>
-                                                          <th scope="row" style="text-align: left;">Reason for the Scholarship:</th>
-                                                          <td>{{user.education.reasons}}</td>                                   
+                                                          <th scope="row" style="text-align: left;">Year of Graduation:</th>
+                                                          <td>{{user.education.graduation}}</td>                                   
                                                         </tr>  
                                                         
-                                                                        
+                                                              
                                                       </tbody>
                                                     </table>
                                                     
                                               </div>
                                               
                                           </div>
+
+                                          <div class="row">
+                                            <div class="col-md-12">
+                                                <span class="h4" style="color: green;">Contacts</span>
+                                                <hr>
+                                                <table class="table bg-white table-borderless">
+                                                    <tbody>
+                                                      
+                                                      <tr>
+                                                        <th scope="row" style="text-align: left;">Referee Name:</th>
+                                                        <td>{{user.contactdetails.contact_person}}</td>                                   
+                                                      </tr>   
+                                                      <tr>
+                                                        <th scope="row" style="text-align: left;">Referee Phone Number:</th>
+                                                        <td>{{user.contactdetails.contact_phone}}</td>                                   
+                                                      </tr> 
+                                                      <tr>
+                                                        <th scope="row" style="text-align: left;">Referee Occupation:</th>
+                                                        <td>{{user.contactdetails.contact_occupation}}</td>                                   
+                                                      </tr>  
+                                                      <tr>
+                                                        <th scope="row" style="text-align: left;">Referee Relationship:</th>
+                                                        <td>{{user.contactdetails.contact_relationship}}</td>                                   
+                                                      </tr> 
+                                                      
+                                                                      
+                                                    </tbody>
+                                                  </table>
+                                                  
+                                            </div>
+                                            
+                                        </div>
                                           <div class="row">
                                               <div class="col-md-12">
-                                                  <span class="h4" style="color: green;">Bank Details</span>
+                                                  <span class="h4" style="color: green;">Training Session Choice:</span>
                                                   <hr>
                                                   <table class="table bg-white table-borderless">
                                                       <tbody>
                                                         <tr>
-                                                          <th scope="row" style="text-align: left;">Bank Name:</th>
-                                                          <td>{{user.bankdetails.bank}}</td>
+                                                          <th scope="row" style="text-align: left;">Session:</th>
+                                                          <td>{{user.tsessions.training_session}}</td>
                                                         </tr>   
                                                         <tr>
-                                                          <th scope="row" style="text-align: left;">Account Number:</th>
-                                                          <td>{{user.bankdetails.account}}</td>                                   
+                                                          <th scope="row" style="text-align: left;">Training Days:</th>
+                                                          <td>{{user.tsessions.training_days}}</td>                                   
                                                         </tr>  
-                                                        <tr>
-                                                          <th scope="row" style="text-align: left;">Account Name:</th>
-                                                          <td>{{user.bankdetails.name}}</td>                                   
-                                                        </tr>  
-                                                        <tr>
-                                                          <th scope="row" style="text-align: left;">Bank Branch:</th>
-                                                          <td>{{user.bankdetails.branch}}</td>                                   
-                                                        </tr>   
+                                                         
+                                                         
                                                         
+                                                        
+                                                      </tbody>
+                                                  </table>
+                                              </div>
+                                          </div>
+                                            <div class="row">
+                                              <div class="col-md-12">
+                                                  <span class="h4" style="color: green;">Training Questionnaire</span>
+                                                  <hr>
+                                                  <table class="table bg-white table-borderless">
+                                                      <tbody>
+                                                        <tr>
+                                                          <th scope="row" style="text-align: left;">Do You have Computer Knowledge?</th>
+                                                          <td>{{user.questionnaire.computer_knowledge}}</td>
+                                                        </tr>   
+                                                        <tr>
+                                                          <th scope="row" style="text-align: left;">Do You Own a Usable Laptop?</th>
+                                                          <td>{{user.questionnaire.own_laptop}}</td>                                   
+                                                        </tr>  
+                                                        <tr>
+                                                          <th scope="row" style="text-align: left;">Do You Own a Usable Smartphone?</th>
+                                                          <td>{{user.questionnaire.own_phone}}</td>                                   
+                                                        </tr>  
+                                                        <tr>
+                                                          <th scope="row" style="text-align: left;">Can You Browse the Internet?</th>
+                                                          <td>{{user.questionnaire.browse_internet}}</td>                                   
+                                                        </tr>  
+                                                        <tr>
+                                                          <th scope="row" style="text-align: left;">Do You Have programming Knowledge?</th>
+                                                          <td>{{user.questionnaire.know_programming}}</td>                                   
+                                                        </tr> 
+                                                        <tr>
+                                                          <th scope="row" style="text-align: left;">Can You Learn All-Night?</th>
+                                                          <td>{{user.questionnaire.learn_night}}</td>                                   
+                                                        </tr> 
                                                         
                                                       </tbody>
                                                   </table>
@@ -174,31 +232,10 @@
                                                         <div class="form-group col-md-12 mb-0">
                                                           <p>
                                                          <b style="color: rgb(143, 106, 14);">{{user.profile.surname}} {{user.profile.othernames}}.</b> Please, 
-                                                            ensure to keep this Slip Safe. Also Note that only applicants who paid for their Processing
-                                                            Fee would be considered for Scholarship Award.
+                                                            ensure to keep this Slip Safe. Also Note that only applicants who can provide this Slip would be given Admission.
                                                           </p>
                                                           
-                                                          <p>
-                                                           <b style="color:red;"> For Nigerian Students Only:</b> Any Applicant with Verve Card (Not Visa or MasterCard) should use any of the following options
-                                                            for their payment:
-                                                            <ul style="color:blue; font-weight:bold;">
-                                                              <li>Wema Bank
-                                                                (Account Number: 7812755422, Account Name: WASU SCHOLARSHIPS)
-                                                              </li>
-                                                              <li>
-                                                                Sterling Bank (Account Number: 8222981508, Account Name: WASU SCHOLARSHIPS)
-                                                              </li>
-                                                            </ul>
-                                                          </p>
-                                                          <p>
-                                                            <b style="color:red;">NOTE:</b>  Payment into  the above accounts can only be processed via POS, Transfer or Card using
-                                                            N609/$1 flat rate for the following Scholarship Categories:
-                                                            <ol style="color:blue; font-weight:bold;">
-                                                              <li>Secondary School Applicants = N609 x $2 = N1,218.00</li>
-                                                              <li>Undergraduate Applicants = N609 x $5 = N3,045.00</li>
-                                                              <li>Post Graduate Applicants = N609 x $7 = N4,263.00</li>
-                                                            </ol>
-                                                          </p>
+                                                          
 
                                                         </div>
                             
@@ -221,26 +258,10 @@
                                                       
                                                       <th>
                                                       <form >
-                                                      <a class="btn btn-success" target="_blank" href="{% url 'print-slip' %}">Print Slip</a>
+                                                      <a class="btn btn-success" target="_blank" href="">Print Slip</a>
                                                     </form>
                                                   </th>
-                                                    <td>
-
-                                                      {% if candidate_edu == "Secondary School" %}
-                                                      
-                                                      <a class="btn btn-success" href="https://flutterwave.com/pay/secondaryschoolcategorydollar">Pay Processing Fee</a>
-
-                                                      {% elif candidate_edu == "Undergraduate"  %}
-
-                                                      <a class="btn btn-success" href="https://flutterwave.com/pay/udergraduatecategorydollar">Pay Processing Fee</a>
-
-                                                      {% else %}
-
-                                                      <a class="btn btn-success" href="https://flutterwave.com/pay/postgraduatedollar">Pay Processing Fee</a>
-
-                                                      {% endif %}
-                                                      
-                                                    </td>
+                                                    
                                                       
                                                     </tbody>
                                                 </table>  
