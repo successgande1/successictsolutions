@@ -1,3 +1,4 @@
+from django.views.decorators.cache import cache_page
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from . models import *
@@ -5,6 +6,7 @@ from . forms import *
 from django.core.mail import *
 
 # Create your views here.
+@cache_page(60 * 40)  # Cache the view for 40 minutes (adjust as needed)
 def index(request):
     context = {
         
@@ -12,13 +14,23 @@ def index(request):
     return render(request, 'pages/index.html', context)
 
 #About Us Template Function View
+@cache_page(60 * 40)  # Cache the view for 40 minutes (adjust as needed)
 def about(request):
     context = {
 
     }
     return render(request, 'pages/about.html', context)
+
+@cache_page(60 * 40)  # Cache the view for 40 minutes (adjust as needed)
+def internet_of_things(request):
+    
+    context = {
+        'page_title': 'IoT Coming Soon!'
+    }
+    return render(request, 'pages/internetofthings.html', context)
 #SuccessGande Custom Software Page
-def software(request):
+@cache_page(60 * 40)  # Cache the view for 40 minutes (adjust as needed)
+def software(request): 
     page_title = "Affordable Web Developers in Benue State, Nigeria"
     context = {
         'page_title':page_title,

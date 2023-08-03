@@ -65,15 +65,21 @@
                     </div>
                     <ul class="nav navbar-nav">	
                         <li><a href="{% url 'pages-home' %}">Home</a></li>
+                        <li ><a href="{% url 'pages-about' %}">About Us <i class="fa fa-chevron-down"></i></a>
+                            <ul class="sub-menu">
+                                <li><a href="{% url 'pages-about' %}">Our Vision</a></li>
+                                <li><a href="{% url 'pages-about'  %}">Our Mission</a></li>
+                            </ul>
+                        </li>
                         <li class="add-mega-menu activate"><a href="javascript:;">Services <i class="fa fa-chevron-down"></i></a>
                             <ul class="sub-menu add-menu">
                                 <li class="add-menu-left">
                                     <h5 class="menu-adv-title">Our Services</h5>
                                     <ul>
                                         <li><a href="{% url 'custom-software' %}">Mobile Web Development </a></li>
-                                        <li><a href="{% url 'develop-website' %}">Online Digital Services</a></li>
-                                        <li><a href="{% url 'training-programs' %}">Programming Training</a></li>
-                                        <li><a href="#">Internet of Things Development</a></li>
+                                        <li><a href="">Online Digital Services</a></li>
+                                        <li><a href="{% url 'admission-process' %}"> Training</a></li>
+                                        <li><a href="{% url 'internet-of-things' %}">Internet of Things Development</a></li>
                                         <li><a href="#">ICT Consultancy</a></li>
                                         
                                     </ul>
@@ -83,17 +89,12 @@
                                 </li>
                             </ul>
                         </li>
-                        <li ><a href="{% url 'pages-about' %}">About Us <i class="fa fa-chevron-down"></i></a>
-                            <ul class="sub-menu">
-                                <li><a href="{% url 'pages-about' %}">Our Vision</a></li>
-                                <li><a href="{% url 'pages-about'  %}">Our Mission</a></li>
-                            </ul>
-                        </li>
+                        
                         <li><a href="javascript:;">Our Portfolio<i class="fa fa-chevron-down"></i></a>
                             <ul class="sub-menu">
-                                <li><a target="_blank" href="http://accounts.successsolutions.com.ng/">Income & Expenditure App</a></li>
-                                <li><a target="_blank" href="http://scholarships.successsolutions.com.ng/">Students' Scholarship App</a></li>
-                                <li><a target="_blank" href="{% url 'custom-software' %}">Event Management App</a></li>
+                                <li><a target="_blank" href="https://accounts.successsolutions.com.ng/">Income & Expenditure App</a></li>
+                                <li><a target="_blank" href="https://scholarships.successsolutions.com.ng/">Students' Scholarship App</a></li>
+                                <li><a target="_blank" href="https://uya.successsolutions.com.ng/">Property Management App</a></li>
                                 <li><a target="_blank" href="{% url 'custom-software' %}">Daily Saving App</a></li>
                             </ul>
                         </li>
@@ -114,7 +115,7 @@
                         </li>
 
                         <li>
-                            <a href="{% url 'training-programs' %}">Admissions</a>
+                            <a href="{% url 'admission-process' %}">Admissions</a>
                             <ul class="sub-menu">
                                 <li><a href="{% url 'training-programs' %}">Apply for Admission</a></li>
                              

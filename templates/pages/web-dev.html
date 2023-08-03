@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %} SUCCESSGANDE | {{ page_title }} {% endblock %}
+{% block title %} {{page_title}} | SUCCESSGANDE {% endblock %}
 
 {% load static %}
 
@@ -13,7 +13,7 @@
     <!-- Inner Content Box ==== -->
     <div class="page-content">
         <!-- Page Heading Box ==== -->
-        <div class="page-banner ovbl-dark" style="background-image:url('{% static 'assets/images/banner/SUCCESSGANDE_Banner.jpg' %}');">
+        <div class="page-banner ovbl-dark" style="background-image:url('{% static 'assets/images/banner/successgande-ict-resources-ltd-banner.jpg' %}');">
             <div class="container">
                 <div class="page-banner-entry">
                     <h1 class="text-white"></h1> 
@@ -23,7 +23,7 @@
 		<div class="breadcrumb-row">
 			<div class="container">
 				<ul class="list-inline">
-					<li><a href="#">Home</a></li>
+					<li><a href="{% url 'pages-home' %}">Home</a></li>
 					<li>{{ page_title }}</li>
 				</ul>
 			</div>
@@ -43,21 +43,21 @@
 								<div class="teacher-bx">
 									<div class="teacher-info">
 										<div class="teacher-thumb">
-											<img src="{% static 'assets/images/testimonials/pic1.jpg' %}" alt=""/>
+											<img src="{% static 'assets/images/testimonials/successgande.jpg' %}" alt=""/>
 										</div>
 										<div class="teacher-name">
-											<h5>Igbeh Emmanuel</h5>
-											<span>Lead Software Developer</span>
+											<h5>Igbeh Emmanuel G.</h5>
+											<span>Co-Founder/Developer</span>
 										</div>
 									</div>
 								</div>
 								
 								<div class="course-info-list scroll-page">
 									<ul class="navbar">
-										<li><a class="nav-link" href="#overview"><i class="ti-zip"></i>Custom Software</a></li>
-										<li><a class="nav-link" href="#curriculum"><i class="ti-bookmark-alt"></i>Software Features</a></li>
-										<li><a class="nav-link" href="#instructor"><i class="ti-user"></i>Developers</a></li>
-										<li><a class="nav-link" href="#reviews"><i class="ti-comments"></i>Testimonies</a></li>
+										<li><a class="nav-link" href="#overview"><i class="ti-zip"></i>Responsive Web Design</a></li>
+										<li><a class="nav-link" href="#curriculum"><i class="ti-bookmark-alt"></i>Cutting-Edge Web Technologies</a></li>
+										<li><a class="nav-link" href="#instructor"><i class="ti-user"></i>Affordable and Reliable Solutions</a></li>
+										<li><a class="nav-link" href="#reviews"><i class="ti-comments"></i>Paying Attention to Details and meeting Deadlines</a></li>
 									</ul>
 								</div>
 							</div>
@@ -65,112 +65,72 @@
 					
 						<div class="col-lg-9 col-md-8 col-sm-12">
 							<div class="courses-post">
-								<div class="ttr-post-media media-effect">
-									<a href="#"><img src="{% static 'assets/images/slider/success-digital-solution-slide2.jpg' %}" alt=""></a>
-								</div>
+								
 								<div class="ttr-post-info">
-									<div class="ttr-post-title">
-										<h2 class="post-title">Website Design and Development</h2>
-									</div>
-									<div class="ttr-post-text">
-										<p>COVID-19 pademic has force humanity to see the role of
-                                            websites in effective business service delivery. Every business organisation 
-                                         with a website that has stand a test of time would 
-                                         testify that their businesses got better with online presence.
-                                         SUCCESSGANDE ICT Solutions is ready to bring these solution to
-                                         you and business affordably. We develop Responsive Websites; Websites
-                                         that can scale across different device screen sizes with
-                                         readibility in view. We use website development Technologies that 
-										 allows us the freedom of flexibility during the design process. Search Engine
-										 Optimization is one thing we alway keep in mind while using these technologies.
-										 <a class="btn btn-success-sm" target="_blank" href="{% url 'contact-us' %}">Get In Touch</a> 
-                                        </p>
-									</div>
-								</div>
-							</div>
-							<div class="courese-overview" id="overview">
-								<h4>Our Web Technologies</h4>
-								<div class="row">
-									<div class="col-md-12 col-lg-4">
-										<ul class="course-features">
-											<li><i class="ti-book"></i> <span class="label">HTML5</span> </li>
-											<li><i class="ti-help-alt"></i> <span class="label">CSS3</span> </li>
-											<li><i class="ti-time"></i> <span class="label">JavaScript</span> </li>
-											<li><i class="ti-stats-up"></i> <span class="label">Bootstrap</span> </li>
-											<li><i class="ti-smallcap"></i> <span class="label">Python</span> </li>
-                                            <li><i class="ti-smallcap"></i> <span class="label">Django</span> </li>
-							
-										</ul>
-									</div>
-									<div class="col-md-12 col-lg-8">
-										<h5 class="m-b5">Our Recent Work</h5>
-										<iframe height="100%" width="100%" src="http://www.extraordinaryfamilychurch.org/" title="Extraordinary Church Website">
-											
-										</iframe>
-                                      
-									</div>
-								</div>
-							</div>
-							<div class="m-b30" id="curriculum">
-								<h4 style="color:rgb(155, 5, 45)">Features</h4>
-								<ul class="curriculum-list">
-										<li>
-											
-											<ul>
-												<li>
-													<div class="curriculum-list-box">
-														<span style="color:brown">Progressive Web Enhencement: </span> <a href="">Read More</a>
-													</div>
-													
-												</li>
-												<li>
-													<div class="curriculum-list-box">
-														<span style="color:brown">Progressive Web App Foundation:</span>  <a href="">Read More</a>
-													</div>
-													
-												</li>
-												<li>
-													<div class="curriculum-list-box">
-														<span style="color:brown">Search Engine Optimization Compliance:</span> <a href="">Read More</a>
-													</div>
-													
-												</li>
-												<li>
-													<div class="curriculum-list-box">
-														<span style="color:brown">Accessibility with Colors:</span> <a href="">Read More</a>
-													</div>
-													
-												</li>
-											</ul>
-										</li>
-										
 									
-									</ul>
-							</div>
-							<div class="" id="instructor">
-								<h4>Developers</h4>
-								<div class="instructor-bx">
-									<div class="instructor-author">
-										<img src="{% static 'assets/images/testimonials/pic1.jpg' %}" alt="SUCCESSGANDE Photo">
-									</div>
-									<div class="instructor-info">
-										<h6>Igbeh Emma Gande </h6>
-										<span>Lead Software Developer</span>
-										<ul class="list-inline m-tb10">
-											<li><a href="https://web.facebook.com/SUCCESSGANDE" target="_blank" class="btn sharp-sm facebook"><i class="fa fa-facebook"></i></a></li>
-											<li><a href="https://twitter.com/successgande" target="_blank" class="btn sharp-sm twitter"><i class="fa fa-twitter"></i></a></li>
-											<li><a href="https://www.linkedin.com/in/gandepuun-emmanuel-a61693198/" target="_blank" class="btn sharp-sm linkedin"><i class="fa fa-linkedin"></i></a></li>
-											<li><a href="#" class="btn sharp-sm google-plus"><i class="fa fa-google-plus"></i></a></li>
-										</ul>
-										<p class="m-b0">Igbeh Emmanuel Gande is a Certified Google Mobile Web Developer through the Google Africa
-											Developer Scholarship Program. Currently, a Python Programmer and Django Developer with ability of 
-											meeting Deadlines and learning new Technologies on the go. He is the Lead Software Developer at SUCCESSGANDE
-											ICT Solutions.
+									<div class="ttr-post-text">
+										<p>
+											Welcome to <b>SUCCESSGANDE ICT RESOURCES LTD</b>, your gateway to the 
+											future of Property Management in Benue State, Nigeria. We are proud 
+											to introduce our latest innovation, the cutting-edge online 
+											Property Management platform - Uya.
+											
+                                        </p>
+										<p>
+											At Uya, our mission is simple yet powerful: to provide affordable 
+											and conducive accommodation solutions for property owners and 
+											prospects alike. We understand the challenges faced by both 
+											landlords and tenants in finding the perfect match, and that's 
+											why we've developed this user-friendly platform to bridge the 
+											gap and simplify the process.
+										</p>
+										<h3>Why Uya?</h3>
+										<p>
+											<b>1. Seamless User Experience:</b> Uya offers an intuitive and easy-to-navigate 
+											interface, making property management hassle-free for owners and property 
+											hunting a breeze for prospects.
+										</p>
+										<p>
+											<b>2. Free First Year:</b> We believe in building trust and recognition within the community. 
+											To achieve this, Uya will be entirely free for the first year of operation, 
+											providing you with a risk-free opportunity to experience our exceptional services.
+										</p>
+										<p>
+											<b>3. Tailored Subscription Plans:</b> After the initial free period, 
+											Uya will continue to impress with its range of flexible and affordable 
+											 plans. Whether you're a property owner or a prospective tenant, our 
+											 plans are designed to suit your specific needs and budget.
+										</p>
+										<p>
+											<b>4. Local Focus:</b> As a company based in Benue State, Nigeria, 
+											we have a deep understanding of the local market and its unique 
+											accommodation challenges. Uya is optimized specifically to cater 
+											to the needs of this region, ensuring that you find the perfect 
+											match for your property or your living needs.
+										</p>
+										<p>
+											<b>5. A Vision for the Future:</b> Uya is just the beginning. As part of 
+											SUCCESSGANDE ICT RESOURCES LTD, we are committed to developing even
+											 more innovative solutions for various industries. Stay tuned as we
+											  continue to expand and evolve to meet the demands of the modern world.
+										</p>
+										<p>
+											Join us on this exciting journey as we revolutionize Property Management 
+											in Benue State and beyond. Whether you're a property owner looking for 
+											hassle-free management or a prospective tenant searching for your dream home,
+											 Uya has got you covered.
+										</p>
+										<p>
+											Embrace the future of accommodation solutions with Uya - your one-stop Property 
+											Management platform. Together, we'll redefine convenience, affordability,
+											 and trust in the real estate landscape.
+											  <a class="btn btn-success-sm" target="_blank" href="{% url 'contact-us' %}">Get In Touch</a> 
 										</p>
 									</div>
 								</div>
-								
 							</div>
+							
+							
 							
 							
 						</div>
@@ -178,6 +138,9 @@
 					</div>
 				</div>
             </div>
+			{% include "partials/_footer.html" %}
+			<!-- Footer END ==== -->
+			<button class="back-to-top fa fa-chevron-up" ></button>
         </div>
 
 
