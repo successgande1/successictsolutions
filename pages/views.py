@@ -19,11 +19,11 @@ def about(request):
     return render(request, 'pages/about.html', context)
 #SuccessGande Custom Software Page
 def software(request):
-    page_title = "Custom Software"
+    page_title = "Affordable Web Developers in Benue State, Nigeria"
     context = {
         'page_title':page_title,
     }
-    return render(request, 'pages/custom-software.html', context)
+    return render(request, 'pages/affordable-web-developers.html', context)
 
 #Contact Us View PAGE
 def contact_us(request):

@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+
+{% block title %} {{page_title}} | SUCCESSGANDE {% endblock %}
+
+{% load static %}
+
+{% block content %}
+<div class="page-wraper">
+	<div id="loading-icon-bx"></div>
+	<!-- Header Top ==== -->
+   {% include 'partials/_header.html' %}
+    <!-- header END ==== -->
+    <!-- Inner Content Box ==== -->
+    <div class="page-content">
+        <!-- Page Heading Box ==== -->
+        <div class="page-banner ovbl-dark" style="background-image:url('{% static 'assets/images/banner/successgande-ict-resources-ltd-banner.jpg' %}');">
+            <div class="container">
+                <div class="page-banner-entry">
+                    <h1 class="text-white"></h1> 
+				 </div>
+            </div>
+        </div>
+		<div class="breadcrumb-row">
+			<div class="container">
+				<ul class="list-inline">
+					<li><a href="{% url 'pages-home' %}">Home</a></li>
+					<li>{{ page_title }}</li>
+				</ul>
+			</div>
+		</div>
+		<!-- Page Heading Box END ==== -->
+        <div class="content-block">
+            <!-- About Us -->
+			<div class="section-area section-sp1">
+                <div class="container">
+					 <div class="row d-flex flex-row-reverse">
+						<div class="col-lg-3 col-md-4 col-sm-12 m-b30">
+							<div class="course-detail-bx">
+									
+								<div class="course-buy-now text-center">
+									<a href="{% url 'contact-us' %}" class="btn radius-xl text-uppercase">Contact Us</a>
+								</div>
+								<div class="teacher-bx">
+									<div class="teacher-info">
+										<div class="teacher-thumb">
+											<img src="{% static 'assets/images/testimonials/successgande.jpg' %}" alt=""/>
+										</div>
+										<div class="teacher-name">
+											<h5>Igbeh Emmanuel G.</h5>
+											<span>Co-Founder/Developer</span>
+										</div>
+									</div>
+								</div>
+								
+								<div class="course-info-list scroll-page">
+									<ul class="navbar">
+										<li><a class="nav-link" href="#overview"><i class="ti-zip"></i>Responsive Web Design</a></li>
+										<li><a class="nav-link" href="#curriculum"><i class="ti-bookmark-alt"></i>Cutting-Edge Web Technologies</a></li>
+										<li><a class="nav-link" href="#instructor"><i class="ti-user"></i>Affordable and Reliable Solutions</a></li>
+										<li><a class="nav-link" href="#reviews"><i class="ti-comments"></i>Paying Attention to Details and meeting Deadlines</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					
+						<div class="col-lg-9 col-md-8 col-sm-12">
+							<div class="courses-post">
+								
+								<div class="ttr-post-info">
+									<div class="ttr-post-title ">
+										<h2 class="post-title">Empowering Businesses in Benue State and Nigeria with Cutting-Edge Web Solutions.</h2>
+									</div>
+									<div class="ttr-post-text">
+										<p>
+											Welcome to our company's website, your one-stop destination for 
+											cutting-edge web technology solutions in Benue State and Nigeria at large. 
+											We pride ourselves on offering a comprehensive range of services, 
+											including responsive website design, development, and hosting, 
+											as well as mobile web application development using HTML5, CSS3, 
+											JavaScript, Bootstrap, Python and numerous Python frameworks.
+											
+                                        </p>
+										<p>
+											When you choose us, you're making the right decision. Our team of 
+											skilled professionals is dedicated to delivering high-quality work
+											 that not only meets but exceeds your expectations. We pay keen 
+											 attention to detail, ensuring that every aspect of your project
+											  is carefully crafted to perfection.
+										</p>
+										<p>
+											Deadlines are sacred to us. We understand the importance of timely 
+											project delivery, and our team works tirelessly to meet them. 
+											You can rest assured that your project will be completed on time, 
+											without compromising on quality.
+										</p>
+										<p>
+											While our core technologies are HTML5, CSS3, JavaScript, Bootstrap, and Python, 
+											we are not limited by them. We stay ahead of the curve by continuously learning 
+											and training in emerging technologies. This enables us to provide you with 
+											cross-platform application development solutions that are future-proof and innovative.
+										</p>
+										<p>
+											We take pride in being reliable and affordable web developers in Benue State and 
+											Nigeria at large. Our goal is to make web technology solutions accessible to 
+											businesses of all sizes, without compromising on quality. You can trust us to 
+											deliver exceptional results at competitive rates.
+										</p>
+										<p>
+											Whether you need a responsive website, a robust web application, or a mobile app,
+											 our team has the expertise to bring your vision to life. So, why wait? Let's 
+											 embark on a journey together and create digital experiences that will propel 
+											 your business to new heights.
+										</p>
+										<p>
+											Reach out to us today, and let's get started on transforming your ideas into
+											 reality with our top-notch web technology solutions. Your success is our priority, 
+											 and we are excited to be part of your journey!
+											  <a class="btn btn-success-sm" target="_blank" href="{% url 'contact-us' %}">Get In Touch</a> 
+										</p>
+									</div>
+								</div>
+							</div>
+							
+							
+							
+							
+						</div>
+						
+					</div>
+				</div>
+            </div>
+			{% include "partials/_footer.html" %}
+			<!-- Footer END ==== -->
+			<button class="back-to-top fa fa-chevron-up" ></button>
+        </div>
+
+
+
+{% endblock %}
