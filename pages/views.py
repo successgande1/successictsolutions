@@ -28,6 +28,22 @@ def internet_of_things(request):
         'page_title': 'IoT Coming Soon!'
     }
     return render(request, 'pages/internetofthings.html', context)
+
+@cache_page(60 * 40)  # Cache the view for 40 minutes (adjust as needed)
+def digital_services(request):
+    
+    context = {
+        'page_title': 'Increase Online Visibility!'
+    }
+    return render(request, 'pages/digital_services.html', context)
+
+@cache_page(60 * 40)  # Cache the view for 40 minutes (adjust as needed)
+def ict_consultancy(request):
+    
+    context = {
+        'page_title': 'ICT Consultancy'
+    }
+    return render(request, 'pages/ict-consultant.html', context)
 #SuccessGande Custom Software Page
 @cache_page(60 * 40)  # Cache the view for 40 minutes (adjust as needed)
 def software(request): 

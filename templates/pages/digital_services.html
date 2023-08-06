@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+
+{% block title %} {{page_title}} | SUCCESSGANDE {% endblock %}
+
+{% load static %}
+
+{% block content %}
+<div class="page-wraper">
+	<div id="loading-icon-bx"></div>
+	<!-- Header Top ==== -->
+   {% include 'partials/_header.html' %}
+    <!-- header END ==== -->
+    <!-- Inner Content Box ==== -->
+    <div class="page-content">
+		
+        <!-- Page Heading Box ==== -->
+        <div class="page-banner ovbl-dark" style="background-image:url('{% static 'assets/images/banner/successgande-ict-resources-ltd-banner.jpg' %}');">
+            <div class="container">
+                <div class="page-banner-entry">
+                    <h1 class="text-white"></h1> 
+				 </div>
+            </div>
+        </div>
+		<div class="breadcrumb-row">
+			<div class="container">
+				<ul class="list-inline">
+					<li><a href="{% url 'pages-home' %}">Home</a></li>
+					<li>{{ page_title }}</li>
+				</ul>
+			</div>
+		</div>
+		<!-- Page Heading Box END ==== -->
+        <div class="content-block">
+            <!-- About Us -->
+			<div class="section-area section-sp1">
+                <div class="container">
+					 <div class="row d-flex flex-row-reverse">
+						<div class="col-lg-3 col-md-4 col-sm-12 m-b30">
+							<div class="course-detail-bx">
+									
+								<div class="course-buy-now text-center">
+									<a href="{% url 'contact-us' %}" class="btn radius-xl text-uppercase">Contact Us</a>
+								</div>
+								<div class="teacher-bx">
+									<div class="teacher-info">
+										<div class="teacher-thumb">
+											<img src="{% static 'assets/images/testimonials/successgande.jpg' %}" alt=""/>
+										</div>
+										<div class="teacher-name">
+											<h5>Igbeh Emmanuel G.</h5>
+											<span>Co-Founder/Developer</span>
+										</div>
+									</div>
+								</div>
+								
+								<div class="course-info-list scroll-page">
+									<ul class="navbar">
+										<li><a class="nav-link" href="#overview"><i class="ti-zip"></i>Responsive Web Design</a></li>
+										<li><a class="nav-link" href="#curriculum"><i class="ti-bookmark-alt"></i>Cutting-Edge Web Technologies</a></li>
+										<li><a class="nav-link" href="#instructor"><i class="ti-user"></i>Affordable and Reliable Solutions</a></li>
+										<li><a class="nav-link" href="#reviews"><i class="ti-comments"></i>Paying Attention to Details and meeting Deadlines</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					
+						<div class="col-lg-9 col-md-8 col-sm-12">
+							<div class="courses-post">
+								
+								<div class="ttr-post-info">
+									
+									<div class="ttr-post-text">
+										<p>
+											At SUCCESSGANDE ICT RESOURCES LTD, we pride ourselves on providing
+											 an extensive range of cutting-edge digital services that empower 
+											 businesses and individuals alike. Our expertise spans various areas, 
+											 ensuring that we cater to all your digital needs.
+                                        </p>
+										<h4>Search Engine Optimization (SEO):</h4>
+										<p>
+											Are you looking to enhance your online visibility and increase organic 
+											traffic? Our Search Engine Optimization services are designed to 
+											catapult your website to the top of search engine rankings. 
+											By optimizing key elements, such as content, meta tags, and 
+											backlinks, we ensure that your website stays ahead of the competition.
+										</p>
+                                        <h4>Uya Property Management Online Services:</h4>
+										<p>
+											Coming soon, our Uya Property Management platform is set to revolutionize 
+											how property owners manage their assets. This innovative solution 
+											will streamline processes, from tenant management and rent 
+											collection to maintenance requests, offering an unparalleled 
+											level of efficiency and ease.
+										</p>
+										<h4>Constant Innovation:</h4>
+										<p>
+											At SUCCESSGANDE ICT RESOURCES LTD, we thrive on innovation. 
+											Our dynamic team is committed to continually unveiling new 
+											services that align with emerging digital trends. 
+											Whether it's advanced data analytics, AI-powered solutions, 
+											or cutting-edge software development, we stay at the forefront 
+											of technology to keep you ahead in the digital landscape.
+											<a class="btn btn-success-sm" target="_blank" href="{% url 'contact-us' %}">Get In Touch</a> 
+										</p>
+										
+										
+                                        
+                                      
+				
+									</div>
+								</div>
+							</div>
+							
+							
+							
+							
+						</div>
+						
+					</div>
+				</div>
+            </div>
+			{% include "partials/_footer.html" %}
+			<!-- Footer END ==== -->
+			<button class="back-to-top fa fa-chevron-up" ></button>
+			
+        </div>
+
+
+
+{% endblock %}

@@ -47,35 +47,25 @@
                             <div class="widget footer_widget">
                                 <h5 class="footer-title">Company</h5>
                                 <ul>
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#">Our Work</a></li>
-                                    <li><a href="#">Contact</a></li>
+                                    <li><a href=" {% url 'pages-home' %} ">Home</a></li>
+                                    <li><a href="{% url 'pages-about' %} ">About Us</a></li>
+                                    
+                                    <li><a href="{% url 'contact-us' %}">Contact</a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="col-4 col-lg-4 col-md-4 col-sm-4">
                             <div class="widget footer_widget">
-                                <h5 class="footer-title">Get In Touch</h5>
+                                <h5 class="footer-title">Our Services</h5>
                                 <ul>
-                                    <li><a href="">Our Office</a></li>
-                                    <li><a href="#">Blog</a></li>
-                                    <li><a href="#">Locate Us Map</a></li>
-                                    <li><a href="#">Events</a></li>
+                                    <li><a href="{% url 'custom-software' %}">Web Programming</a></li>
+                                    <li><a href="{% url 'admission-process' %}">Programming Training</a></li>
+                                    <li><a href="{% url 'digital-services' %}">Digital Services</a></li>
+                                    <li><a href="{% url 'ict-consultancy' %}">ICT Consultancy</a></li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-4 col-lg-4 col-md-4 col-sm-4">
-                            <div class="widget footer_widget">
-                                <h5 class="footer-title">Courses</h5>
-                                <ul>
-                                    <li><a href="#">Courses</a></li>
-                                    <li><a href="#">Details</a></li>
-                                    <li><a href="#">Membership</a></li>
-                                    <li><a href="#">Profile</a></li>
-                                </ul>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
                 <div class="col-12 col-lg-3 col-md-5 col-sm-12 footer-col-4">
