@@ -367,34 +367,38 @@ def profile_update(request):
 
 @login_required(login_url='user-login')
 def add_education(request):
-    try:
-       check_education = Education.objects.get(applicant=request.user)
+    user = request.user
+    if not user.is_superuser: #Check if is not Admin User then add Education Record
+        try:
+            check_education = Education.objects.get(applicant=request.user)
        
-    except Education.DoesNotExist:
+        except Education.DoesNotExist:
          #Check if the form method is POST
-        if request.method == 'POST':
-            #Grab the Add Education Form with information and files
-            form = AddEducationForm(request.POST, request.FILES)
-            #Check if the form is valid
-            if form.is_valid():
-                #Attach the logged in applicant to the Education Form (User instance)
-                form.instance.applicant = request.user
-                #Save the form
-                form.save()
-                #Send Success Message
-                messages.success(request, 'Education Added, Review Details To Continue.')
-                return redirect('applicant-contact')
-        else:
-            form = AddEducationForm()
-        context = {
+            if request.method == 'POST':
+                #Grab the Add Education Form with information and files
+                form = AddEducationForm(request.POST, request.FILES)
+                #Check if the form is valid
+                if form.is_valid():
+                    #Attach the logged in applicant to the Education Form (User instance)
+                    form.instance.applicant = request.user
+                    #Save the form
+                    form.save()
+                    #Send Success Message
+                    messages.success(request, 'Education Added, Review Details To Continue.')
+                    return redirect('applicant-contact')
+            else:
+                form = AddEducationForm()
+            context = {
             'form':form,
-        }
-        return render(request, 'user/add_education.html', context) 
-    else:
-        if check_education.qualification != None:
-            return redirect('view-education')
+            }
+            return render(request, 'user/add_education.html', context) 
         else:
-            return redirect('app-submit')
+            if check_education.qualification != None:
+                return redirect('view-education')
+            else:
+                return redirect('app-submit')
+    else:
+        return redirect('user-profile')
         
 #Method for viewing Education Detail
 class EducationDetail(LoginRequiredMixin, DetailView):

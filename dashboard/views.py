@@ -35,7 +35,7 @@ def index(request):
 
     if 'user' in request.session:#Check for user session
 
-        if hasattr(logged_user, 'user') and not hasattr(logged_user, 'applicant'):
+        if logged_user.is_superuser: #Check if it is Super User Admin
             # Using the Helpers function, Check if User Profile is completed with a new image uploaded
             profile = get_profile(logged_user)
             if not profile_complete(profile):
